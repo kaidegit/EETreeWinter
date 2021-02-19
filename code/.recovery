@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BaliProject version="3.2" title="ds18b20" device="LCMXO2-4000HC-5MG132C" default_implementation="impl1">
+    <Options/>
+    <Implementation title="impl1" dir="impl1" description="impl1" synthesis="lse" default_strategy="Strategy1">
+        <Options def_top="ds18b20_top" top="ds18b20_top"/>
+        <Source name="top.v" type="Verilog" type_short="Verilog">
+            <Options top_module="ds18b20_top"/>
+        </Source>
+        <Source name="ds18b20.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="OLED.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="bcd_8421.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="time.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="uarttx.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="uart2tone.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="uart_recv.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="pwm.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="ds18b20.lpf" type="Logic Preference" type_short="LPF">
+            <Options/>
+        </Source>
+        <Source name="impl1/impl1.xcf" type="Programming Project File" type_short="Programming">
+            <Options/>
+        </Source>
+    </Implementation>
+    <Strategy name="Strategy1" file="ds18b201.sty"/>
+</BaliProject>

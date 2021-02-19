@@ -1,0 +1,90 @@
+---------------------------------------------------
+Report for cell ds18b20_top
+   Instance path: ds18b20_top
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	     963.00        100.0
+                                  LUT4	    1640.00        100.0
+                                 IOBUF	         17        100.0
+                                PFUREG	        547        100.0
+                                RIPPLE	        141        100.0
+SUB MODULES
+                                  cell	      count    SLC Usage(%)
+                               uart_tx	          1         6.2
+                             uart_recv	          1         3.0
+                             uart2tone	          1         2.8
+                             OLED12832	          1        42.7
+                                 clock	          1        10.0
+                              bcd_8421	          1         3.4
+                              DS18B20Z	          1        13.0
+                                Beeper	          1         3.4
+---------------------------------------------------
+Report for cell uart_tx
+   Instance path: ds18b20_top/m_uart_tx
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      59.23         6.2
+                                  LUT4	      75.00         4.6
+                                PFUREG	         75        13.7
+                                RIPPLE	         19        13.5
+---------------------------------------------------
+Report for cell OLED12832
+   Instance path: ds18b20_top/m_OLED12832
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	     411.17        42.7
+                                  LUT4	     775.33        47.3
+                                PFUREG	        197        36.0
+                                RIPPLE	         32        22.7
+---------------------------------------------------
+Report for cell uart2tone
+   Instance path: ds18b20_top/m_uart2tone
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      27.33         2.8
+                                  LUT4	      18.00         1.1
+                                PFUREG	         40         7.3
+                                RIPPLE	         17        12.1
+---------------------------------------------------
+Report for cell clock
+   Instance path: ds18b20_top/m_clock
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      95.92        10.0
+                                  LUT4	     152.33         9.3
+                                PFUREG	         74        13.5
+                                RIPPLE	         22        15.6
+---------------------------------------------------
+Report for cell Beeper
+   Instance path: ds18b20_top/m_Beeper
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      33.00         3.4
+                                  LUT4	      28.00         1.7
+                                PFUREG	         19         3.5
+                                RIPPLE	         20        14.2
+---------------------------------------------------
+Report for cell bcd_8421
+   Instance path: ds18b20_top/m_bcd_8421
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      33.18         3.4
+                                  LUT4	      70.67         4.3
+---------------------------------------------------
+Report for cell uart_recv
+   Instance path: ds18b20_top/m_uart_recv
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      28.67         3.0
+                                  LUT4	      29.00         1.8
+                                PFUREG	         46         8.4
+                                RIPPLE	          9         6.4
+---------------------------------------------------
+Report for cell DS18B20Z
+   Instance path: ds18b20_top/m_DS18B20Z
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	     125.58        13.0
+                                  LUT4	     187.00        11.4
+                                PFUREG	         96        17.6
+                                RIPPLE	         22        15.6

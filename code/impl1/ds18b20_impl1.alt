@@ -1,0 +1,25 @@
+NOTE Copyright (C), 1992-2010, Lattice Semiconductor Corporation *
+NOTE All Rights Reserved *
+NOTE DATE CREATED: Fri Feb 19 19:37:58 2021 *
+NOTE DESIGN NAME: ds18b20_top *
+NOTE DEVICE NAME: LCMXO2-4000HC-5CSBGA132 *
+NOTE PIN ASSIGNMENTS *
+NOTE PINS sys_clk : C1 : in *
+NOTE PINS sys_rst_n : M10 : in *
+NOTE PINS piano_out : P8 : out *
+NOTE PINS led : P9 : out *
+NOTE PINS uart_txd : B8 : out *
+NOTE PINS oled_dat : F12 : out *
+NOTE PINS oled_clk : E12 : out *
+NOTE PINS oled_dcn : F13 : out *
+NOTE PINS oled_rst : G12 : out *
+NOTE PINS oled_csn : F14 : out *
+NOTE PINS one_wire : N7 : inout *
+NOTE PINS tone_en : M9 : in *
+NOTE PINS uart_rxd : C8 : in *
+NOTE PINS min_d : L14 : in *
+NOTE PINS min_a : M13 : in *
+NOTE PINS hour_d : M14 : in *
+NOTE PINS hour_a : N14 : in *
+NOTE CONFIGURATION MODE: NONE *
+NOTE COMPRESSION: on *

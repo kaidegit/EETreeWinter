@@ -1,0 +1,113 @@
+#Start recording tcl command: 2/4/2021 22:17:44
+#Project Location: C:/fpga/ds18b20; Project name: ds18b20
+prj_project open "C:/fpga/ds18b20/ds18b20.ldf"
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_src add "C:/fpga/ds18b20/bcd_8421.v"
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Export -impl impl1 -task Jedecgen
+pgr_project save "C:/fpga/ds18b20/impl1/impl1.xcf"
+prj_src add -exclude "C:/fpga/ds18b20/impl1/impl1.xcf"
+prj_src enable "C:/fpga/ds18b20/impl1/impl1.xcf"
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+prj_run Export -impl impl1 -task Jedecgen
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+pgr_program run
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+prj_run Export -impl impl1 -task Jedecgen
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_src add "C:/fpga/ds18b20/uart_send_byte.v"
+prj_src add "C:/fpga/ds18b20/bcd_8421.v" "C:/fpga/ds18b20/ds18b20.v" "C:/fpga/ds18b20/OLED.v" "C:/fpga/ds18b20/top.v" "C:/fpga/ds18b20/uart_send_byte.v" "C:/fpga/ds18b20/uart_send_temp.v"
+prj_run Export -impl impl1 -task Jedecgen
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Export -impl impl1 -task Jedecgen
+prj_run Export -impl impl1 -task Jedecgen
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Map -impl impl1 -task MapTrace
+prj_run Export -impl impl1 -task Jedecgen
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+prj_run Export -impl impl1 -task Jedecgen
+prj_run Export -impl impl1 -task Jedecgen
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+prj_run Export -impl impl1 -task Jedecgen
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen
+pgr_program run
+pgr_project save "C:/fpga/ds18b20/impl1/impl1.xcf"
+prj_project save
+prj_project close
+#Stop recording: 2/10/2021 15:22:22

@@ -1,0 +1,1120 @@
+
+Loading design for application trce from file ds18b20_impl1_map.ncd.
+Design name: ds18b20_top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-4000HC
+Package:     CSBGA132
+Performance: 5
+Loading device for application trce from file 'xo2c4000.nph' in environment: C:/lscc/diamond/3.10_x64/ispfpga.
+Package Status:                     Final          Version 1.44.
+Performance Hardware Data Status:   Final          Version 34.4.
+Setup and Hold Report
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.10.0.111.2
+Fri Feb 19 19:37:31 2021
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o ds18b20_impl1.tw1 -gui -msgset C:/fpga/ds18b20/promote.xml ds18b20_impl1_map.ncd ds18b20_impl1.prf 
+Design file:     ds18b20_impl1_map.ncd
+Preference file: ds18b20_impl1.prf
+Device,speed:    LCMXO2-4000HC,5
+Report level:    verbose report, limited to 1 item per preference
+--------------------------------------------------------------------------------
+
+Report Type:     based on TRACE automatically generated preferences
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+Preference: FREQUENCY NET "sys_clk_c" 103.756000 MHz ;
+            4096 items scored, 4096 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error: The following path exceeds requirements by 5.634ns (weighted slack = -125.116ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              m_clock/time_min_low_i3  (from m_clock/clk_1ms +)
+   Destination:    FF         Data in        m_OLED12832/char_i3  (to sys_clk_c +)
+
+   Delay:               5.918ns  (41.0% logic, 59.0% route), 5 logic levels.
+
+ Constraint Details:
+
+      5.918ns physical path delay m_clock/SLICE_358 to m_OLED12832/SLICE_192 exceeds
+      (delay constraint based on source clock period of 4.602ns and destination clock period of 9.638ns)
+      0.434ns delay constraint less
+      0.150ns DIN_SET requirement (totaling 0.284ns) by 5.634ns
+
+ Physical Path Details:
+
+      Data path m_clock/SLICE_358 to m_OLED12832/SLICE_192:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409 *SLICE_358.CLK to */SLICE_358.Q0 m_clock/SLICE_358 (from m_clock/clk_1ms)
+ROUTE        11   e 1.030 */SLICE_358.Q0 to */SLICE_409.B1 time_min_low_3
+CTOOFX_DEL  ---     0.661 */SLICE_409.B1 to *LICE_409.OFX0 m_OLED12832/i24294/SLICE_409
+ROUTE         1   e 1.030 *LICE_409.OFX0 to */SLICE_626.A1 m_OLED12832/n27213
+CTOF_DEL    ---     0.452 */SLICE_626.A1 to */SLICE_626.F1 m_OLED12832/SLICE_626
+ROUTE         1   e 0.401 */SLICE_626.F1 to */SLICE_626.B0 m_OLED12832/char_167_N_690_3
+CTOF_DEL    ---     0.452 */SLICE_626.B0 to */SLICE_626.F0 m_OLED12832/SLICE_626
+ROUTE         1   e 1.030 */SLICE_626.F0 to */SLICE_192.C1 m_OLED12832/n16_adj_1717
+CTOF_DEL    ---     0.452 */SLICE_192.C1 to */SLICE_192.F1 m_OLED12832/SLICE_192
+ROUTE         1   e 0.001 */SLICE_192.F1 to *SLICE_192.DI1 m_OLED12832/char_167_N_359_3 (to sys_clk_c)
+                  --------
+                    5.918   (41.0% logic, 59.0% route), 5 logic levels.
+
+Warning:   7.421MHz is the maximum frequency for this preference.
+
+
+================================================================================
+Preference: FREQUENCY NET "m_uart_tx/clk_en" 112.880000 MHz ;
+            4096 items scored, 4096 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error: The following path exceeds requirements by 14.239ns (weighted slack = -68.259ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              m_DS18B20Z/data_out_i0_i10  (from sys_clk_c +)
+   Destination:    FF         Data in        m_uart_tx/uart_data_i2  (to m_uart_tx/clk_en +)
+                   FF                        m_uart_tx/uart_data_i1
+
+   Delay:              15.839ns  (32.4% logic, 67.6% route), 11 logic levels.
+
+ Constraint Details:
+
+     15.839ns physical path delay SLICE_349 to SLICE_319 exceeds
+      (delay constraint based on source clock period of 9.638ns and destination clock period of 8.859ns)
+      1.848ns delay constraint less
+      0.248ns LSR_SET requirement (totaling 1.600ns) by 14.239ns
+
+ Physical Path Details:
+
+      Data path SLICE_349 to SLICE_319:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409  SLICE_349.CLK to   SLICE_349.Q0 SLICE_349 (from sys_clk_c)
+ROUTE         6   e 1.030   SLICE_349.Q0 to */SLICE_832.A0 temp_raw_data_10
+CTOF_DEL    ---     0.452 */SLICE_832.A0 to */SLICE_832.F0 m_bcd_8421/SLICE_832
+ROUTE         8   e 1.030 */SLICE_832.F0 to */SLICE_831.B1 m_bcd_8421/n27678
+CTOF_DEL    ---     0.452 */SLICE_831.B1 to */SLICE_831.F1 m_bcd_8421/SLICE_831
+ROUTE         2   e 1.030 */SLICE_831.F1 to */SLICE_836.D1 m_bcd_8421/n25340
+CTOF_DEL    ---     0.452 */SLICE_836.D1 to */SLICE_836.F1 m_bcd_8421/SLICE_836
+ROUTE         1   e 1.030 */SLICE_836.F1 to */SLICE_723.C1 m_bcd_8421/n4_adj_1660
+CTOF_DEL    ---     0.452 */SLICE_723.C1 to */SLICE_723.F1 m_bcd_8421/SLICE_723
+ROUTE         2   e 1.030 */SLICE_723.F1 to */SLICE_826.D0 m_bcd_8421/n17632
+CTOF_DEL    ---     0.452 */SLICE_826.D0 to */SLICE_826.F0 m_bcd_8421/SLICE_826
+ROUTE         1   e 0.401 */SLICE_826.F0 to */SLICE_826.B1 m_bcd_8421/n6
+CTOF_DEL    ---     0.452 */SLICE_826.B1 to */SLICE_826.F1 m_bcd_8421/SLICE_826
+ROUTE         3   e 1.030 */SLICE_826.F1 to   SLICE_320.C0 m_bcd_8421/n25059
+CTOF_DEL    ---     0.452   SLICE_320.C0 to   SLICE_320.F0 SLICE_320
+ROUTE         3   e 1.030   SLICE_320.F0 to */SLICE_378.D1 uart_data_120_N_1204_0
+CTOOFX_DEL  ---     0.661 */SLICE_378.D1 to *LICE_378.OFX0 m_uart_tx/i23879/SLICE_378
+ROUTE         1   e 1.030 *LICE_378.OFX0 to   SLICE_616.D1 m_uart_tx/n26542
+CTOF_DEL    ---     0.452   SLICE_616.D1 to   SLICE_616.F1 SLICE_616
+ROUTE         3   e 1.030   SLICE_616.F1 to   SLICE_329.D0 n26544
+CTOF_DEL    ---     0.452   SLICE_329.D0 to   SLICE_329.F0 SLICE_329
+ROUTE        14   e 1.030   SLICE_329.F0 to  SLICE_319.LSR uart_data_120_N_1005_5 (to m_uart_tx/clk_en)
+                  --------
+                   15.839   (32.4% logic, 67.6% route), 11 logic levels.
+
+Warning:  12.967MHz is the maximum frequency for this preference.
+
+
+================================================================================
+Preference: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;
+            208 items scored, 119 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error: The following path exceeds requirements by 6.168ns (weighted slack = -31.934ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              m_uart_tx/uart_data_i48  (from m_uart_tx/clk_en +)
+   Destination:    FF         Data in        m_uart_tx/uart_out_48  (to m_uart_tx/clk_uart +)
+
+   Delay:               6.965ns  (40.8% logic, 59.2% route), 5 logic levels.
+
+ Constraint Details:
+
+      6.965ns physical path delay SLICE_615 to m_uart_tx/SLICE_367 exceeds
+      (delay constraint based on source clock period of 8.859ns and destination clock period of 4.903ns)
+      0.947ns delay constraint less
+      0.150ns DIN_SET requirement (totaling 0.797ns) by 6.168ns
+
+ Physical Path Details:
+
+      Data path SLICE_615 to m_uart_tx/SLICE_367:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409  SLICE_615.CLK to   SLICE_615.Q1 SLICE_615 (from m_uart_tx/clk_en)
+ROUTE         1   e 1.030   SLICE_615.Q1 to */SLICE_377.B1 m_uart_tx/uart_data_106
+CTOOFX_DEL  ---     0.661 */SLICE_377.B1 to *LICE_377.OFX0 m_uart_tx/i24307/SLICE_377
+ROUTE         1   e 1.030 *LICE_377.OFX0 to */SLICE_376.A0 m_uart_tx/n27237
+CTOOFX_DEL  ---     0.661 */SLICE_376.A0 to *LICE_376.OFX0 m_uart_tx/i24309/SLICE_376
+ROUTE         1   e 1.030 *LICE_376.OFX0 to   SLICE_743.A0 m_uart_tx/n27239
+CTOF_DEL    ---     0.452   SLICE_743.A0 to   SLICE_743.F0 SLICE_743
+ROUTE         1   e 1.030   SLICE_743.F0 to */SLICE_367.C1 m_uart_tx/n25743
+CTOOFX_DEL  ---     0.661 */SLICE_367.C1 to *LICE_367.OFX0 m_uart_tx/SLICE_367
+ROUTE         1   e 0.001 *LICE_367.OFX0 to *SLICE_367.DI0 m_uart_tx/uart_out_N_1245 (to m_uart_tx/clk_uart)
+                  --------
+                    6.965   (40.8% logic, 59.2% route), 5 logic levels.
+
+Warning:  27.149MHz is the maximum frequency for this preference.
+
+
+================================================================================
+Preference: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;
+            1337 items scored, 1022 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error: The following path exceeds requirements by 7.300ns (weighted slack = -106.312ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              m_clock/hour_set_high__i1  (from m_clock/clk_500ms +)
+   Destination:    FF         Data in        m_clock/time_hour_high_i1  (to m_clock/clk_1ms +)
+                   FF                        m_clock/time_hour_high_i0
+
+   Delay:               7.367ns  (30.1% logic, 69.9% route), 5 logic levels.
+
+ Constraint Details:
+
+      7.367ns physical path delay m_clock/SLICE_280 to m_clock/SLICE_350 exceeds
+      (delay constraint based on source clock period of 7.300ns and destination clock period of 4.602ns)
+      0.316ns delay constraint less
+      0.249ns CE_SET requirement (totaling 0.067ns) by 7.300ns
+
+ Physical Path Details:
+
+      Data path m_clock/SLICE_280 to m_clock/SLICE_350:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409 *SLICE_280.CLK to */SLICE_280.Q1 m_clock/SLICE_280 (from m_clock/clk_500ms)
+ROUTE         2   e 1.030 */SLICE_280.Q1 to */SLICE_963.C0 m_clock/hour_set_high_1
+CTOF_DEL    ---     0.452 */SLICE_963.C0 to */SLICE_963.F0 m_clock/SLICE_963
+ROUTE         1   e 1.030 */SLICE_963.F0 to */SLICE_812.B0 m_clock/n28
+CTOF_DEL    ---     0.452 */SLICE_812.B0 to */SLICE_812.F0 m_clock/SLICE_812
+ROUTE         4   e 1.030 */SLICE_812.F0 to */SLICE_998.B0 m_clock/n25895
+CTOF_DEL    ---     0.452 */SLICE_998.B0 to */SLICE_998.F0 m_clock/SLICE_998
+ROUTE        28   e 1.030 */SLICE_998.F0 to */SLICE_806.A1 m_clock/clk_1ms_enable_32
+CTOF_DEL    ---     0.452 */SLICE_806.A1 to */SLICE_806.F1 m_clock/SLICE_806
+ROUTE         2   e 1.030 */SLICE_806.F1 to */SLICE_350.CE m_clock/clk_1ms_enable_21 (to m_clock/clk_1ms)
+                  --------
+                    7.367   (30.1% logic, 69.9% route), 5 logic levels.
+
+Warning:   9.016MHz is the maximum frequency for this preference.
+
+
+================================================================================
+Preference: FREQUENCY NET "m_clock/clk_500ms" 136.986000 MHz ;
+            2003 items scored, 1969 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error: The following path exceeds requirements by 13.274ns (weighted slack = -202.720ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              m_clock/time_hour_low_i1  (from m_clock/clk_1ms +)
+   Destination:    FF         Data in        m_clock/hour_set_low__i2  (to m_clock/clk_500ms +)
+
+   Delay:              13.504ns  (31.4% logic, 68.6% route), 9 logic levels.
+
+ Constraint Details:
+
+     13.504ns physical path delay m_clock/SLICE_352 to m_clock/SLICE_284 exceeds
+      (delay constraint based on source clock period of 4.602ns and destination clock period of 7.300ns)
+      0.478ns delay constraint less
+      0.248ns LSR_SET requirement (totaling 0.230ns) by 13.274ns
+
+ Physical Path Details:
+
+      Data path m_clock/SLICE_352 to m_clock/SLICE_284:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409 *SLICE_352.CLK to */SLICE_352.Q1 m_clock/SLICE_352 (from m_clock/clk_1ms)
+ROUTE        15   e 1.030 */SLICE_352.Q1 to */SLICE_822.A0 time_hour_low_1
+CTOF_DEL    ---     0.452 */SLICE_822.A0 to */SLICE_822.F0 m_clock/SLICE_822
+ROUTE         3   e 1.030 */SLICE_822.F0 to */SLICE_451.C1 n10387
+CTOOFX_DEL  ---     0.661 */SLICE_451.C1 to *LICE_451.OFX0 m_clock/i1299/SLICE_451
+ROUTE         1   e 1.030 *LICE_451.OFX0 to */SLICE_818.A0 m_clock/n1153
+CTOF_DEL    ---     0.452 */SLICE_818.A0 to */SLICE_818.F0 m_clock/SLICE_818
+ROUTE         4   e 1.030 */SLICE_818.F0 to */SLICE_281.D1 m_clock/n25510
+CTOF_DEL    ---     0.452 */SLICE_281.D1 to */SLICE_281.F1 m_clock/SLICE_281
+ROUTE         2   e 1.030 */SLICE_281.F1 to   SLICE_734.C1 m_clock/n8350
+CTOF_DEL    ---     0.452   SLICE_734.C1 to   SLICE_734.F1 SLICE_734
+ROUTE         1   e 1.030   SLICE_734.F1 to   SLICE_363.C0 m_clock/n8993
+CTOF_DEL    ---     0.452   SLICE_363.C0 to   SLICE_363.F0 SLICE_363
+ROUTE         1   e 1.030   SLICE_363.F0 to */SLICE_817.C1 m_clock/n6_adj_1666
+CTOF_DEL    ---     0.452 */SLICE_817.C1 to */SLICE_817.F1 m_clock/SLICE_817
+ROUTE         2   e 1.030 */SLICE_817.F1 to */SLICE_937.D1 m_clock/n25024
+CTOF_DEL    ---     0.452 */SLICE_937.D1 to */SLICE_937.F1 m_clock/SLICE_937
+ROUTE         4   e 1.030 */SLICE_937.F1 to *SLICE_284.LSR m_clock/n12374 (to m_clock/clk_500ms)
+                  --------
+                   13.504   (31.4% logic, 68.6% route), 9 logic levels.
+
+Warning:   4.761MHz is the maximum frequency for this preference.
+
+
+================================================================================
+Preference: FREQUENCY NET "m_DS18B20Z/clk_1mhz" 293.858000 MHz ;
+            59 items scored, 59 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error: The following path exceeds requirements by 4.644ns (weighted slack = -27.677ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              m_DS18B20Z/cnt_i0_i0  (from sys_clk_c +)
+   Destination:    FF         Data in        m_DS18B20Z/one_wire_buffer_155  (to m_DS18B20Z/clk_1mhz +)
+
+   Delay:               5.065ns  (39.0% logic, 61.0% route), 4 logic levels.
+
+ Constraint Details:
+
+      5.065ns physical path delay m_DS18B20Z/SLICE_146 to m_DS18B20Z/SLICE_340 exceeds
+      (delay constraint based on source clock period of 9.638ns and destination clock period of 3.403ns)
+      0.571ns delay constraint less
+      0.150ns DIN_SET requirement (totaling 0.421ns) by 4.644ns
+
+ Physical Path Details:
+
+      Data path m_DS18B20Z/SLICE_146 to m_DS18B20Z/SLICE_340:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409 *SLICE_146.CLK to */SLICE_146.Q0 m_DS18B20Z/SLICE_146 (from sys_clk_c)
+ROUTE        15   e 1.030 */SLICE_146.Q0 to */SLICE_460.B1 m_DS18B20Z/cnt_0
+CTOOFX_DEL  ---     0.661 */SLICE_460.B1 to *LICE_460.OFX0 m_DS18B20Z/i24355/SLICE_460
+ROUTE         1   e 1.030 *LICE_460.OFX0 to */SLICE_974.A1 m_DS18B20Z/one_wire_N_281
+CTOF_DEL    ---     0.452 */SLICE_974.A1 to */SLICE_974.F1 m_DS18B20Z/SLICE_974
+ROUTE         1   e 1.030 */SLICE_974.F1 to */SLICE_340.D0 m_DS18B20Z/n10
+CTOF_DEL    ---     0.452 */SLICE_340.D0 to */SLICE_340.F0 m_DS18B20Z/SLICE_340
+ROUTE         1   e 0.001 */SLICE_340.F0 to *SLICE_340.DI0 m_DS18B20Z/one_wire_N_277 (to m_DS18B20Z/clk_1mhz)
+                  --------
+                    5.065   (39.0% logic, 61.0% route), 4 logic levels.
+
+Warning:  32.174MHz is the maximum frequency for this preference.
+
+Report Summary
+--------------
+----------------------------------------------------------------------------
+Preference                              |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY NET "sys_clk_c" 103.756000    |             |             |
+MHz ;                                   |  103.756 MHz|    7.421 MHz|   5 *
+                                        |             |             |
+FREQUENCY NET "m_uart_tx/clk_en"        |             |             |
+112.880000 MHz ;                        |  112.880 MHz|   12.967 MHz|  11 *
+                                        |             |             |
+FREQUENCY NET "m_uart_tx/clk_uart"      |             |             |
+203.957000 MHz ;                        |  203.957 MHz|   27.149 MHz|   5 *
+                                        |             |             |
+FREQUENCY NET "m_clock/clk_1ms"         |             |             |
+217.297000 MHz ;                        |  217.297 MHz|    9.016 MHz|   5 *
+                                        |             |             |
+FREQUENCY NET "m_clock/clk_500ms"       |             |             |
+136.986000 MHz ;                        |  136.986 MHz|    4.761 MHz|   9 *
+                                        |             |             |
+FREQUENCY NET "m_DS18B20Z/clk_1mhz"     |             |             |
+293.858000 MHz ;                        |  293.858 MHz|   32.174 MHz|   4 *
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+6 preferences(marked by "*" above) not met.
+
+----------------------------------------------------------------------------
+Critical Nets                           |   Loads|  Errors| % of total
+----------------------------------------------------------------------------
+n26544                                  |       3|    4096|     36.05%
+                                        |        |        |
+uart_data_120_N_1005_5                  |      14|    3698|     32.55%
+                                        |        |        |
+m_uart_tx/n26542                        |       1|    2668|     23.48%
+                                        |        |        |
+m_bcd_8421/n17632                       |       2|    2028|     17.85%
+                                        |        |        |
+n25294                                  |       4|    1868|     16.44%
+                                        |        |        |
+m_bcd_8421/n25255                       |       2|    1814|     15.97%
+                                        |        |        |
+m_bcd_8421/n6_adj_1656                  |       1|    1740|     15.32%
+                                        |        |        |
+n27540                                  |       6|    1546|     13.61%
+                                        |        |        |
+m_bcd_8421/n4_adj_1660                  |       1|    1468|     12.92%
+                                        |        |        |
+m_OLED12832/n2134                       |       4|    1398|     12.31%
+                                        |        |        |
+n659                                    |     269|    1398|     12.31%
+                                        |        |        |
+m_bcd_8421/n25059                       |       3|    1372|     12.08%
+                                        |        |        |
+m_bcd_8421/n6                           |       1|    1372|     12.08%
+                                        |        |        |
+m_OLED12832/n25765                      |       3|    1344|     11.83%
+                                        |        |        |
+n27549                                  |     270|    1296|     11.41%
+                                        |        |        |
+m_uart_tx/n4                            |       1|    1288|     11.34%
+                                        |        |        |
+m_clock/n25024                          |       2|    1278|     11.25%
+                                        |        |        |
+----------------------------------------------------------------------------
+
+
+Clock Domains Analysis
+------------------------
+
+Found 12 clocks:
+
+Clock Domain: m_DS18B20Z/clk_1mhz   Source: m_DS18B20Z/SLICE_145.Q0   Loads: 12
+   No transfer within this clock domain is found
+
+   Data transfers from:
+   Clock Domain: sys_clk_c   Source: sys_clk.PAD
+      Covered under: FREQUENCY NET "m_DS18B20Z/clk_1mhz" 293.858000 MHz ;   Transfers: 19
+
+Clock Domain: m_DS18B20Z/clk_1mhz   Source: m_DS18B20Z/SLICE_145.Q0   Loads: 12
+   No transfer within this clock domain is found
+
+Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0   Loads: 15
+   No transfer within this clock domain is found
+
+   Data transfers from:
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_500ms" 136.986000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_500ms" 136.986000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_500ms" 136.986000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_500ms" 136.986000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_500ms" 136.986000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_500ms" 136.986000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_500ms" 136.986000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_500ms" 136.986000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_500ms" 136.986000 MHz ;   Transfers: 2
+
+Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0   Loads: 15
+   No transfer within this clock domain is found
+
+Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0   Loads: 26
+   No transfer within this clock domain is found
+
+   Data transfers from:
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0   Loads: 26
+   No transfer within this clock domain is found
+
+Clock Domain: m_uart_tx/clk_uart   Source: m_uart_tx/SLICE_311.Q0   Loads: 8
+   No transfer within this clock domain is found
+
+   Data transfers from:
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 1
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 1
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 1
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 1
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 1
+
+Clock Domain: m_uart_tx/clk_uart   Source: m_uart_tx/SLICE_311.Q0   Loads: 8
+   No transfer within this clock domain is found
+
+Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0   Loads: 18
+   No transfer within this clock domain is found
+
+Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0   Loads: 18
+   No transfer within this clock domain is found
+
+Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0   Loads: 18
+   Covered under: FREQUENCY NET "m_uart_tx/clk_en" 112.880000 MHz ;
+
+   Data transfers from:
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_en" 112.880000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_en" 112.880000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_en" 112.880000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_en" 112.880000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_en" 112.880000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_en" 112.880000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_en" 112.880000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_en" 112.880000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_en" 112.880000 MHz ;   Transfers: 2
+
+   Clock Domain: sys_clk_c   Source: sys_clk.PAD
+      Covered under: FREQUENCY NET "m_uart_tx/clk_en" 112.880000 MHz ;   Transfers: 12
+
+Clock Domain: sys_clk_c   Source: sys_clk.PAD   Loads: 262
+   Covered under: FREQUENCY NET "sys_clk_c" 103.756000 MHz ;
+
+   Data transfers from:
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "sys_clk_c" 103.756000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "sys_clk_c" 103.756000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "sys_clk_c" 103.756000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "sys_clk_c" 103.756000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "sys_clk_c" 103.756000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "sys_clk_c" 103.756000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "sys_clk_c" 103.756000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "sys_clk_c" 103.756000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "sys_clk_c" 103.756000 MHz ;   Transfers: 1
+
+
+Timing summary (Setup):
+---------------
+
+Timing errors: 11361  Score: 577715238
+Cumulative negative slack: 577715238
+
+Constraints cover 84154 paths, 61 nets, and 7911 connections (96.11% coverage)
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.10.0.111.2
+Fri Feb 19 19:37:31 2021
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o ds18b20_impl1.tw1 -gui -msgset C:/fpga/ds18b20/promote.xml ds18b20_impl1_map.ncd ds18b20_impl1.prf 
+Design file:     ds18b20_impl1_map.ncd
+Preference file: ds18b20_impl1.prf
+Device,speed:    LCMXO2-4000HC,M
+Report level:    verbose report, limited to 1 item per preference
+--------------------------------------------------------------------------------
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+Preference: FREQUENCY NET "sys_clk_c" 103.756000 MHz ;
+            4096 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 0.351ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              m_uart_recv/rx_cnt_FSM_i14  (from sys_clk_c +)
+   Destination:    FF         Data in        m_uart_recv/rx_cnt_FSM_i15  (to sys_clk_c +)
+
+   Delay:               0.332ns  (40.1% logic, 59.9% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.332ns physical path delay SLICE_616 to SLICE_616 meets
+     -0.019ns M_HLD and
+      0.000ns delay constraint requirement (totaling -0.019ns) by 0.351ns
+
+ Physical Path Details:
+
+      Data path SLICE_616 to SLICE_616:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133  SLICE_616.CLK to   SLICE_616.Q0 SLICE_616 (from sys_clk_c)
+ROUTE         1   e 0.199   SLICE_616.Q0 to   SLICE_616.M1 m_uart_recv/n593 (to sys_clk_c)
+                  --------
+                    0.332   (40.1% logic, 59.9% route), 1 logic levels.
+
+
+================================================================================
+Preference: FREQUENCY NET "m_uart_tx/clk_en" 112.880000 MHz ;
+            4096 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 0.447ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              m_uart_tx/flag_1_47  (from m_uart_tx/clk_en +)
+   Destination:    FF         Data in        m_uart_tx/flag_1_47  (to m_uart_tx/clk_en +)
+
+   Delay:               0.434ns  (53.9% logic, 46.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.434ns physical path delay m_uart_tx/SLICE_312 to m_uart_tx/SLICE_312 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint requirement (totaling -0.013ns) by 0.447ns
+
+ Physical Path Details:
+
+      Data path m_uart_tx/SLICE_312 to m_uart_tx/SLICE_312:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133 *SLICE_312.CLK to */SLICE_312.Q0 m_uart_tx/SLICE_312 (from m_uart_tx/clk_en)
+ROUTE         4   e 0.199 */SLICE_312.Q0 to */SLICE_312.A0 m_uart_tx/flag_1
+CTOF_DEL    ---     0.101 */SLICE_312.A0 to */SLICE_312.F0 m_uart_tx/SLICE_312
+ROUTE         1   e 0.001 */SLICE_312.F0 to *SLICE_312.DI0 m_uart_tx/flag_1_N_1248 (to m_uart_tx/clk_en)
+                  --------
+                    0.434   (53.9% logic, 46.1% route), 2 logic levels.
+
+
+================================================================================
+Preference: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;
+            208 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 0.447ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              m_uart_tx/i_i0  (from m_uart_tx/clk_uart +)
+   Destination:    FF         Data in        m_uart_tx/i_i1  (to m_uart_tx/clk_uart +)
+
+   Delay:               0.434ns  (53.9% logic, 46.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.434ns physical path delay m_uart_tx/SLICE_314 to m_uart_tx/SLICE_314 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint requirement (totaling -0.013ns) by 0.447ns
+
+ Physical Path Details:
+
+      Data path m_uart_tx/SLICE_314 to m_uart_tx/SLICE_314:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133 *SLICE_314.CLK to */SLICE_314.Q0 m_uart_tx/SLICE_314 (from m_uart_tx/clk_uart)
+ROUTE        33   e 0.199 */SLICE_314.Q0 to */SLICE_314.B1 m_uart_tx/i_0
+CTOF_DEL    ---     0.101 */SLICE_314.B1 to */SLICE_314.F1 m_uart_tx/SLICE_314
+ROUTE         1   e 0.001 */SLICE_314.F1 to *SLICE_314.DI1 m_uart_tx/n741 (to m_uart_tx/clk_uart)
+                  --------
+                    0.434   (53.9% logic, 46.1% route), 2 logic levels.
+
+
+================================================================================
+Preference: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;
+            1337 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 0.447ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              m_clock/ms_2276__i3  (from m_clock/clk_1ms +)
+   Destination:    FF         Data in        m_clock/ms_2276__i3  (to m_clock/clk_1ms +)
+
+   Delay:               0.434ns  (53.9% logic, 46.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.434ns physical path delay m_clock/SLICE_74 to m_clock/SLICE_74 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint requirement (totaling -0.013ns) by 0.447ns
+
+ Physical Path Details:
+
+      Data path m_clock/SLICE_74 to m_clock/SLICE_74:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133 */SLICE_74.CLK to *k/SLICE_74.Q0 m_clock/SLICE_74 (from m_clock/clk_1ms)
+ROUTE         1   e 0.199 *k/SLICE_74.Q0 to *k/SLICE_74.A0 m_clock/n13
+CTOF_DEL    ---     0.101 *k/SLICE_74.A0 to *k/SLICE_74.F0 m_clock/SLICE_74
+ROUTE         1   e 0.001 *k/SLICE_74.F0 to */SLICE_74.DI0 m_clock/n82 (to m_clock/clk_1ms)
+                  --------
+                    0.434   (53.9% logic, 46.1% route), 2 logic levels.
+
+
+================================================================================
+Preference: FREQUENCY NET "m_clock/clk_500ms" 136.986000 MHz ;
+            2003 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 0.502ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              m_clock/hour_set_low__i1  (from m_clock/clk_500ms +)
+   Destination:    FF         Data in        m_clock/hour_set_low__i1  (to m_clock/clk_500ms +)
+
+   Delay:               0.489ns  (59.1% logic, 40.9% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.489ns physical path delay m_clock/SLICE_283 to m_clock/SLICE_283 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint requirement (totaling -0.013ns) by 0.502ns
+
+ Physical Path Details:
+
+      Data path m_clock/SLICE_283 to m_clock/SLICE_283:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133 *SLICE_283.CLK to */SLICE_283.Q0 m_clock/SLICE_283 (from m_clock/clk_500ms)
+ROUTE         3   e 0.199 */SLICE_283.Q0 to */SLICE_283.D1 m_clock/hour_set_low_1
+CTOOFX_DEL  ---     0.156 */SLICE_283.D1 to *LICE_283.OFX0 m_clock/SLICE_283
+ROUTE         2   e 0.001 *LICE_283.OFX0 to *SLICE_283.DI0 m_clock/hour_set_high_3_N_1581_1 (to m_clock/clk_500ms)
+                  --------
+                    0.489   (59.1% logic, 40.9% route), 2 logic levels.
+
+
+================================================================================
+Preference: FREQUENCY NET "m_DS18B20Z/clk_1mhz" 293.858000 MHz ;
+            59 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 0.763ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              m_DS18B20Z/state_i0_i0  (from sys_clk_c +)
+   Destination:    FF         Data in        m_DS18B20Z/i140_163  (to m_DS18B20Z/clk_1mhz +)
+
+   Delay:               0.750ns  (31.2% logic, 68.8% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.750ns physical path delay m_DS18B20Z/SLICE_172 to m_DS18B20Z/SLICE_171 meets
+      (delay constraint based on source clock period of 9.638ns and destination clock period of 3.403ns)
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint requirement (totaling -0.013ns) by 0.763ns
+
+ Physical Path Details:
+
+      Data path m_DS18B20Z/SLICE_172 to m_DS18B20Z/SLICE_171:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133 *SLICE_172.CLK to */SLICE_172.Q0 m_DS18B20Z/SLICE_172 (from sys_clk_c)
+ROUTE        57   e 0.515 */SLICE_172.Q0 to */SLICE_171.C0 m_DS18B20Z/state_0
+CTOF_DEL    ---     0.101 */SLICE_171.C0 to */SLICE_171.F0 m_DS18B20Z/SLICE_171
+ROUTE         1   e 0.001 */SLICE_171.F0 to *SLICE_171.DI0 m_DS18B20Z/one_wire_N_288 (to m_DS18B20Z/clk_1mhz)
+                  --------
+                    0.750   (31.2% logic, 68.8% route), 2 logic levels.
+
+Report Summary
+--------------
+----------------------------------------------------------------------------
+Preference(MIN Delays)                  |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY NET "sys_clk_c" 103.756000    |             |             |
+MHz ;                                   |     0.000 ns|     0.351 ns|   1  
+                                        |             |             |
+FREQUENCY NET "m_uart_tx/clk_en"        |             |             |
+112.880000 MHz ;                        |     0.000 ns|     0.447 ns|   2  
+                                        |             |             |
+FREQUENCY NET "m_uart_tx/clk_uart"      |             |             |
+203.957000 MHz ;                        |     0.000 ns|     0.447 ns|   2  
+                                        |             |             |
+FREQUENCY NET "m_clock/clk_1ms"         |             |             |
+217.297000 MHz ;                        |     0.000 ns|     0.447 ns|   2  
+                                        |             |             |
+FREQUENCY NET "m_clock/clk_500ms"       |             |             |
+136.986000 MHz ;                        |     0.000 ns|     0.502 ns|   2  
+                                        |             |             |
+FREQUENCY NET "m_DS18B20Z/clk_1mhz"     |             |             |
+293.858000 MHz ;                        |     0.000 ns|     0.763 ns|   2  
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+All preferences were met.
+
+
+Clock Domains Analysis
+------------------------
+
+Found 12 clocks:
+
+Clock Domain: m_DS18B20Z/clk_1mhz   Source: m_DS18B20Z/SLICE_145.Q0   Loads: 12
+   No transfer within this clock domain is found
+
+   Data transfers from:
+   Clock Domain: sys_clk_c   Source: sys_clk.PAD
+      Covered under: FREQUENCY NET "m_DS18B20Z/clk_1mhz" 293.858000 MHz ;   Transfers: 19
+
+Clock Domain: m_DS18B20Z/clk_1mhz   Source: m_DS18B20Z/SLICE_145.Q0   Loads: 12
+   No transfer within this clock domain is found
+
+Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0   Loads: 15
+   No transfer within this clock domain is found
+
+   Data transfers from:
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_500ms" 136.986000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_500ms" 136.986000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_500ms" 136.986000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_500ms" 136.986000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_500ms" 136.986000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_500ms" 136.986000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_500ms" 136.986000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_500ms" 136.986000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_500ms" 136.986000 MHz ;   Transfers: 2
+
+Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0   Loads: 15
+   No transfer within this clock domain is found
+
+Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0   Loads: 26
+   No transfer within this clock domain is found
+
+   Data transfers from:
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_500ms   Source: m_clock/SLICE_279.Q0
+      Covered under: FREQUENCY NET "m_clock/clk_1ms" 217.297000 MHz ;   Transfers: 1
+
+Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0   Loads: 26
+   No transfer within this clock domain is found
+
+Clock Domain: m_uart_tx/clk_uart   Source: m_uart_tx/SLICE_311.Q0   Loads: 8
+   No transfer within this clock domain is found
+
+   Data transfers from:
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 1
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 1
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 1
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 2
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 1
+
+   Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_uart" 203.957000 MHz ;   Transfers: 1
+
+Clock Domain: m_uart_tx/clk_uart   Source: m_uart_tx/SLICE_311.Q0   Loads: 8
+   No transfer within this clock domain is found
+
+Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0   Loads: 18
+   No transfer within this clock domain is found
+
+   Data transfers from:
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_en" 112.880000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_en" 112.880000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_en" 112.880000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_en" 112.880000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_en" 112.880000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_en" 112.880000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_en" 112.880000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_en" 112.880000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "m_uart_tx/clk_en" 112.880000 MHz ;   Transfers: 2
+
+   Clock Domain: sys_clk_c   Source: sys_clk.PAD
+      Covered under: FREQUENCY NET "m_uart_tx/clk_en" 112.880000 MHz ;   Transfers: 12
+
+Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0   Loads: 18
+   No transfer within this clock domain is found
+
+Clock Domain: m_uart_tx/clk_en   Source: m_uart_tx/SLICE_310.Q0   Loads: 18
+   No transfer within this clock domain is found
+
+Clock Domain: sys_clk_c   Source: sys_clk.PAD   Loads: 262
+   Covered under: FREQUENCY NET "sys_clk_c" 103.756000 MHz ;
+
+   Data transfers from:
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "sys_clk_c" 103.756000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "sys_clk_c" 103.756000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "sys_clk_c" 103.756000 MHz ;   Transfers: 1
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "sys_clk_c" 103.756000 MHz ;   Transfers: 5
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "sys_clk_c" 103.756000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "sys_clk_c" 103.756000 MHz ;   Transfers: 2
+
+   Clock Domain: m_clock/clk_1ms   Source: m_clock/SLICE_278.Q0
+      Covered under: FREQUENCY NET "sys_clk_c" 103.756000 MHz ;   Transfers: 2
+
+
+Timing summary (Hold):
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 84154 paths, 61 nets, and 8103 connections (98.44% coverage)
+
+
+
+Timing summary (Setup and Hold):
+---------------
+
+Timing errors: 11361 (setup), 0 (hold)
+Score: 577715238 (setup), 0 (hold)
+Cumulative negative slack: 577715238 (577715238+0)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+

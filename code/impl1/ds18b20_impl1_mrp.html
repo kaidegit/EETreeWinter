@@ -1,0 +1,941 @@
+<HTML>
+<HEAD><TITLE>Project Summary</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="Mrp"></A>
+         Lattice Mapping Report File for Design Module 'ds18b20_top'
+
+
+
+<A name="mrp_di"></A><B><U><big>Design Information</big></U></B>
+
+Command line:   map -a MachXO2 -p LCMXO2-4000HC -t CSBGA132 -s 5 -oc Commercial
+     ds18b20_impl1.ngd -o ds18b20_impl1_map.ncd -pr ds18b20_impl1.prf -mp
+     ds18b20_impl1.mrp -lpf C:/fpga/ds18b20/impl1/ds18b20_impl1.lpf -lpf
+     C:/fpga/ds18b20/ds18b20.lpf -c 0 -gui -msgset C:/fpga/ds18b20/promote.xml 
+Target Vendor:  LATTICE
+Target Device:  LCMXO2-4000HCCSBGA132
+Target Performance:   5
+Mapper:  xo2c00,  version:  Diamond (64-bit) 3.10.0.111.2
+Mapped on:  02/19/21  19:37:29
+
+
+<A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
+   Number of registers:    547 out of  4635 (12%)
+      PFU registers:          547 out of  4320 (13%)
+      PIO registers:            0 out of   315 (0%)
+   Number of SLICEs:       963 out of  2160 (45%)
+      SLICEs as Logic/ROM:    963 out of  2160 (45%)
+      SLICEs as RAM:            0 out of  1620 (0%)
+      SLICEs as Carry:        141 out of  2160 (7%)
+   Number of LUT4s:        1922 out of  4320 (44%)
+      Number used as logic LUTs:        1640
+      Number used as distributed RAM:     0
+      Number used as ripple logic:      282
+      Number used as shift registers:     0
+   Number of PIO sites used: 17 + 4(JTAG) out of 105 (20%)
+   Number of block RAMs:  0 out of 10 (0%)
+   Number of GSRs:  1 out of 1 (100%)
+   EFB used :       No
+   JTAG used :      No
+   Readback used :  No
+   Oscillator used :  No
+   Startup used :   No
+   POR :            On
+   Bandgap :        On
+   Number of Power Controller:  0 out of 1 (0%)
+   Number of Dynamic Bank Controller (BCINRD):  0 out of 6 (0%)
+   Number of Dynamic Bank Controller (BCLVDSO):  0 out of 1 (0%)
+   Number of DCCA:  0 out of 8 (0%)
+   Number of DCMA:  0 out of 2 (0%)
+   Number of PLLs:  0 out of 2 (0%)
+   Number of DQSDLLs:  0 out of 2 (0%)
+   Number of CLKDIVC:  0 out of 4 (0%)
+   Number of ECLKSYNCA:  0 out of 4 (0%)
+   Number of ECLKBRIDGECS:  0 out of 2 (0%)
+   Notes:-
+      1. Total number of LUT4s = (Number of logic LUT4s) + 2*(Number of
+     distributed RAMs) + 2*(Number of ripple logic)
+      2. Number of logic LUT4s does not include count of distributed RAM and
+     ripple logic.
+   Number of clocks:  6
+     Net sys_clk_c: 262 loads, 262 rising, 0 falling (Driver: PIO sys_clk )
+     Net m_uart_tx/clk_en: 17 loads, 17 rising, 0 falling (Driver:
+     m_uart_tx/clk_en_45 )
+     Net m_uart_tx/clk_uart: 7 loads, 7 rising, 0 falling (Driver:
+
+     m_uart_tx/clk_uart_43 )
+     Net m_clock/clk_1ms: 25 loads, 25 rising, 0 falling (Driver:
+     m_clock/clk_1ms_140 )
+     Net m_clock/clk_500ms: 14 loads, 14 rising, 0 falling (Driver:
+     m_clock/clk_500ms_142 )
+     Net m_DS18B20Z/clk_1mhz: 2 loads, 2 rising, 0 falling (Driver:
+     m_DS18B20Z/clk_1mhz_145 )
+   Number of Clock Enables:  63
+     Net sys_clk_c_enable_140: 3 loads, 3 LSLICEs
+     Net sys_rst_n_c: 2 loads, 2 LSLICEs
+     Net m_uart_tx/state: 4 loads, 4 LSLICEs
+     Net m_uart_tx/clk_uart_enable_1: 1 loads, 1 LSLICEs
+     Net m_uart_tx/clk_uart_enable_2: 1 loads, 1 LSLICEs
+     Net m_OLED12832/sys_clk_c_enable_62: 3 loads, 3 LSLICEs
+     Net m_OLED12832/sys_clk_c_enable_169: 6 loads, 6 LSLICEs
+     Net m_OLED12832/sys_clk_c_enable_170: 9 loads, 9 LSLICEs
+     Net m_OLED12832/sys_clk_c_enable_5: 1 loads, 1 LSLICEs
+     Net m_OLED12832/sys_clk_c_enable_6: 1 loads, 1 LSLICEs
+     Net m_OLED12832/sys_clk_c_enable_142: 3 loads, 3 LSLICEs
+     Net m_OLED12832/sys_clk_c_enable_193: 4 loads, 4 LSLICEs
+     Net m_OLED12832/sys_clk_c_enable_171: 2 loads, 2 LSLICEs
+     Net m_OLED12832/sys_clk_c_enable_152: 9 loads, 9 LSLICEs
+     Net m_OLED12832/sys_clk_c_enable_166: 3 loads, 3 LSLICEs
+     Net m_OLED12832/sys_clk_c_enable_199: 1 loads, 1 LSLICEs
+     Net m_OLED12832/sys_clk_c_enable_194: 3 loads, 3 LSLICEs
+     Net m_OLED12832/sys_clk_c_enable_197: 1 loads, 1 LSLICEs
+     Net m_OLED12832/sys_clk_c_enable_198: 1 loads, 1 LSLICEs
+     Net sys_clk_c_enable_162: 4 loads, 4 LSLICEs
+     Net m_uart2tone/sys_clk_c_enable_141: 4 loads, 4 LSLICEs
+     Net m_uart2tone/sys_clk_c_enable_196: 1 loads, 1 LSLICEs
+     Net m_clock/clk_1ms_enable_32: 9 loads, 9 LSLICEs
+     Net m_clock/clk_500ms_enable_4: 4 loads, 4 LSLICEs
+     Net m_clock/clk_1ms_enable_30: 3 loads, 3 LSLICEs
+     Net m_clock/clk_1ms_enable_27: 2 loads, 2 LSLICEs
+     Net m_clock/clk_1ms_enable_24: 2 loads, 2 LSLICEs
+     Net m_clock/clk_1ms_enable_21: 2 loads, 2 LSLICEs
+     Net m_uart_recv/sys_clk_c_enable_117: 8 loads, 8 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_189: 6 loads, 6 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_11: 1 loads, 1 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_73: 11 loads, 11 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_129: 4 loads, 4 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_173: 1 loads, 1 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_83: 2 loads, 2 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_80: 2 loads, 2 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_78: 2 loads, 2 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_75: 2 loads, 2 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_154: 2 loads, 2 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_41: 1 loads, 1 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_156: 1 loads, 1 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_43: 1 loads, 1 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_44: 1 loads, 1 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_47: 1 loads, 1 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_49: 1 loads, 1 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_50: 1 loads, 1 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_55: 1 loads, 1 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_58: 1 loads, 1 LSLICEs
+
+     Net m_DS18B20Z/sys_clk_c_enable_87: 1 loads, 1 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_89: 1 loads, 1 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_172: 1 loads, 1 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_88: 1 loads, 1 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_90: 1 loads, 1 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_122: 2 loads, 2 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_174: 2 loads, 2 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_133: 1 loads, 1 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_134: 1 loads, 1 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_155: 1 loads, 1 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_175: 1 loads, 1 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_178: 2 loads, 2 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_192: 2 loads, 2 LSLICEs
+     Net m_DS18B20Z/sys_clk_c_enable_195: 1 loads, 1 LSLICEs
+     Net m_DS18B20Z/one_wire_N_283: 1 loads, 1 LSLICEs
+   Number of LSRs:  34
+     Net rx_flag: 11 loads, 11 LSLICEs
+     Net uart_data_120_N_1005_5: 13 loads, 13 LSLICEs
+     Net m_uart_tx/n12382: 13 loads, 13 LSLICEs
+     Net m_uart_tx/n12490: 4 loads, 4 LSLICEs
+     Net m_uart_tx/n12358: 6 loads, 6 LSLICEs
+     Net n25267: 1 loads, 1 LSLICEs
+     Net m_OLED12832/n12386: 9 loads, 9 LSLICEs
+     Net m_OLED12832/n12385: 3 loads, 3 LSLICEs
+     Net m_OLED12832/n12380: 2 loads, 2 LSLICEs
+     Net m_OLED12832/n17612: 1 loads, 1 LSLICEs
+     Net m_OLED12832/n12423: 9 loads, 9 LSLICEs
+     Net m_OLED12832/n12408: 3 loads, 3 LSLICEs
+     Net m_OLED12832/n12510: 2 loads, 2 LSLICEs
+     Net m_OLED12832/n12507: 2 loads, 2 LSLICEs
+     Net m_OLED12832/n12496: 4 loads, 4 LSLICEs
+     Net m_OLED12832/n12487: 1 loads, 1 LSLICEs
+     Net m_uart2tone/clk_1s_cnt_24__N_1436: 13 loads, 13 LSLICEs
+     Net n12482: 2 loads, 2 LSLICEs
+     Net m_uart2tone/n12411: 4 loads, 4 LSLICEs
+     Net m_clock/n12384: 9 loads, 9 LSLICEs
+     Net m_clock/n12417: 7 loads, 7 LSLICEs
+     Net m_clock/n12383: 2 loads, 2 LSLICEs
+     Net m_clock/n12374: 4 loads, 4 LSLICEs
+     Net m_clock/n12377: 6 loads, 6 LSLICEs
+     Net m_clock/n12375: 4 loads, 4 LSLICEs
+     Net m_Beeper/n1110: 10 loads, 10 LSLICEs
+     Net m_uart_recv/uart_data_7__N_1323: 3 loads, 3 LSLICEs
+     Net m_uart_recv/n12361: 9 loads, 9 LSLICEs
+     Net m_DS18B20Z/n12448: 11 loads, 11 LSLICEs
+     Net m_DS18B20Z/n12438: 2 loads, 2 LSLICEs
+     Net m_DS18B20Z/n12441: 2 loads, 2 LSLICEs
+     Net m_DS18B20Z/n12443: 2 loads, 2 LSLICEs
+     Net m_DS18B20Z/n27689: 2 loads, 2 LSLICEs
+     Net m_DS18B20Z/n15890: 1 loads, 1 LSLICEs
+   Number of nets driven by tri-state buffers:  0
+   Top 10 highest fanout non-clock nets:
+     Net n27542: 270 loads
+     Net n27549: 270 loads
+     Net n659: 269 loads
+     Net n27550: 268 loads
+
+     Net m_OLED12832/state_0: 152 loads
+     Net n658: 143 loads
+     Net m_OLED12832/state_1: 122 loads
+     Net m_OLED12832/n27558: 94 loads
+     Net m_OLED12832/state_2: 80 loads
+     Net m_OLED12832/n27613: 76 loads
+
+
+
+
+   Number of warnings:  0
+   Number of errors:    0
+     
+
+
+
+
+<A name="mrp_dwe"></A><B><U><big>Design Errors/Warnings</big></U></B>
+
+   No errors or warnings present.
+
+
+
+<A name="mrp_ioa"></A><B><U><big>IO (PIO) Attributes</big></U></B>
+
++---------------------+-----------+-----------+------------+
+| IO Name             | Direction | Levelmode | IO         |
+|                     |           |  IO_TYPE  | Register   |
++---------------------+-----------+-----------+------------+
+| sys_clk             | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| sys_rst_n           | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| piano_out           | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| led                 | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| uart_txd            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| oled_dat            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| oled_clk            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| oled_dcn            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| oled_rst            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| oled_csn            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| one_wire            | BIDIR     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| tone_en             | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| uart_rxd            | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| min_d               | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| min_a               | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+
+| hour_d              | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| hour_a              | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+
+
+
+<A name="mrp_rm"></A><B><U><big>Removed logic</big></U></B>
+
+Block i25098 undriven or does not drive anything - clipped.
+Signal n6384 was merged into signal m_DS18B20Z/one_wire_N_273
+Signal m_uart_recv/n12373 was merged into signal m_uart_recv/uart_data_7__N_1323
+     
+Signal m_uart_recv/n5318 was merged into signal rx_flag
+Signal m_clock/n27764 was merged into signal m_clock/min_set_high_2
+Signal m_clock/n27767 was merged into signal m_clock/hour_set_low_2
+Signal VCC_net undriven or does not drive anything - clipped.
+Signal m_DS18B20Z/sub_1707_add_2_9/S1 undriven or does not drive anything -
+     clipped.
+Signal m_DS18B20Z/sub_1707_add_2_9/S0 undriven or does not drive anything -
+     clipped.
+Signal m_DS18B20Z/sub_1707_add_2_11/S1 undriven or does not drive anything -
+     clipped.
+Signal m_DS18B20Z/sub_1707_add_2_11/S0 undriven or does not drive anything -
+     clipped.
+Signal m_DS18B20Z/sub_1707_add_2_13/S1 undriven or does not drive anything -
+     clipped.
+Signal m_DS18B20Z/sub_1707_add_2_13/S0 undriven or does not drive anything -
+     clipped.
+Signal m_DS18B20Z/sub_1707_add_2_15/S1 undriven or does not drive anything -
+     clipped.
+Signal m_DS18B20Z/sub_1707_add_2_15/S0 undriven or does not drive anything -
+     clipped.
+Signal m_DS18B20Z/sub_1707_add_2_17/S1 undriven or does not drive anything -
+     clipped.
+Signal m_DS18B20Z/sub_1707_add_2_17/S0 undriven or does not drive anything -
+     clipped.
+Signal m_DS18B20Z/sub_1707_add_2_19/S1 undriven or does not drive anything -
+     clipped.
+Signal m_DS18B20Z/sub_1707_add_2_19/S0 undriven or does not drive anything -
+     clipped.
+Signal m_DS18B20Z/sub_1707_add_2_21/S0 undriven or does not drive anything -
+     clipped.
+Signal m_DS18B20Z/sub_1707_add_2_21/CO undriven or does not drive anything -
+     clipped.
+Signal m_DS18B20Z/add_77_1/S0 undriven or does not drive anything - clipped.
+Signal m_DS18B20Z/add_77_1/CI undriven or does not drive anything - clipped.
+Signal m_DS18B20Z/add_77_21/S1 undriven or does not drive anything - clipped.
+Signal m_DS18B20Z/add_77_21/CO undriven or does not drive anything - clipped.
+Signal m_DS18B20Z/sub_1707_add_2_1/S1 undriven or does not drive anything -
+     clipped.
+Signal m_DS18B20Z/sub_1707_add_2_1/S0 undriven or does not drive anything -
+     clipped.
+Signal m_DS18B20Z/sub_1707_add_2_1/CI undriven or does not drive anything -
+     clipped.
+Signal m_DS18B20Z/sub_1707_add_2_3/S1 undriven or does not drive anything -
+     clipped.
+
+Signal m_DS18B20Z/sub_1707_add_2_3/S0 undriven or does not drive anything -
+     clipped.
+Signal m_DS18B20Z/sub_1707_add_2_5/S1 undriven or does not drive anything -
+     clipped.
+Signal m_DS18B20Z/sub_1707_add_2_5/S0 undriven or does not drive anything -
+     clipped.
+Signal m_DS18B20Z/sub_1707_add_2_7/S1 undriven or does not drive anything -
+     clipped.
+Signal m_DS18B20Z/sub_1707_add_2_7/S0 undriven or does not drive anything -
+     clipped.
+Signal m_uart_recv/clk_cnt_2267_add_4_17/S1 undriven or does not drive anything
+     - clipped.
+Signal m_uart_recv/clk_cnt_2267_add_4_17/CO undriven or does not drive anything
+     - clipped.
+Signal m_uart_recv/clk_cnt_2267_add_4_1/S0 undriven or does not drive anything -
+     clipped.
+Signal m_uart_recv/clk_cnt_2267_add_4_1/CI undriven or does not drive anything -
+     clipped.
+Signal m_Beeper/time_cnt_2269_add_4_19/S1 undriven or does not drive anything -
+     clipped.
+Signal m_Beeper/time_cnt_2269_add_4_19/CO undriven or does not drive anything -
+     clipped.
+Signal m_Beeper/add_1383_1/S0 undriven or does not drive anything - clipped.
+Signal m_Beeper/add_1383_1/CI undriven or does not drive anything - clipped.
+Signal m_Beeper/add_1383_19/CO undriven or does not drive anything - clipped.
+Signal m_Beeper/time_cnt_2269_add_4_1/S0 undriven or does not drive anything -
+     clipped.
+Signal m_Beeper/time_cnt_2269_add_4_1/CI undriven or does not drive anything -
+     clipped.
+Signal m_clock/clk_1ms_cnt_2278_add_4_1/S0 undriven or does not drive anything -
+     clipped.
+Signal m_clock/clk_1ms_cnt_2278_add_4_1/CI undriven or does not drive anything -
+     clipped.
+Signal m_clock/clk_1ms_cnt_2278_add_4_13/CO undriven or does not drive anything
+     - clipped.
+Signal m_clock/clk_500ms_cnt_2275_add_4_1/S0 undriven or does not drive anything
+     - clipped.
+Signal m_clock/clk_500ms_cnt_2275_add_4_1/CI undriven or does not drive anything
+     - clipped.
+Signal m_clock/clk_500ms_cnt_2275_add_4_11/CO undriven or does not drive
+     anything - clipped.
+Signal m_clock/ms_2276_add_4_1/S0 undriven or does not drive anything - clipped.
+     
+Signal m_clock/ms_2276_add_4_1/CI undriven or does not drive anything - clipped.
+     
+Signal m_clock/ms_2276_add_4_17/S1 undriven or does not drive anything -
+     clipped.
+Signal m_clock/ms_2276_add_4_17/CO undriven or does not drive anything -
+     clipped.
+Signal m_uart2tone/alarm_cnt_2271_add_4_1/S0 undriven or does not drive anything
+     - clipped.
+Signal m_uart2tone/alarm_cnt_2271_add_4_1/CI undriven or does not drive anything
+     - clipped.
+Signal m_uart2tone/alarm_cnt_2271_add_4_7/CO undriven or does not drive anything
+     - clipped.
+Signal m_uart2tone/clk_1s_cnt_2272_2273_add_4_1/S0 undriven or does not drive
+
+     anything - clipped.
+Signal m_uart2tone/clk_1s_cnt_2272_2273_add_4_1/CI undriven or does not drive
+     anything - clipped.
+Signal m_uart2tone/clk_1s_cnt_2272_2273_add_4_25/S1 undriven or does not drive
+     anything - clipped.
+Signal m_uart2tone/clk_1s_cnt_2272_2273_add_4_25/CO undriven or does not drive
+     anything - clipped.
+Signal m_OLED12832/num_2268_add_4_1/S0 undriven or does not drive anything -
+     clipped.
+Signal m_OLED12832/num_2268_add_4_1/CI undriven or does not drive anything -
+     clipped.
+Signal m_OLED12832/num_2268_add_4_9/S1 undriven or does not drive anything -
+     clipped.
+Signal m_OLED12832/num_2268_add_4_9/CO undriven or does not drive anything -
+     clipped.
+Signal m_OLED12832/add_32_1/S0 undriven or does not drive anything - clipped.
+Signal m_OLED12832/add_32_1/CI undriven or does not drive anything - clipped.
+Signal m_OLED12832/add_32_17/S1 undriven or does not drive anything - clipped.
+Signal m_OLED12832/add_32_17/CO undriven or does not drive anything - clipped.
+Signal m_OLED12832/add_106_1/S0 undriven or does not drive anything - clipped.
+Signal m_OLED12832/add_106_1/CI undriven or does not drive anything - clipped.
+Signal m_OLED12832/add_106_17/S1 undriven or does not drive anything - clipped.
+Signal m_OLED12832/add_106_17/CO undriven or does not drive anything - clipped.
+Signal m_OLED12832/sub_1708_add_2_1/S1 undriven or does not drive anything -
+     clipped.
+Signal m_OLED12832/sub_1708_add_2_1/S0 undriven or does not drive anything -
+     clipped.
+Signal m_OLED12832/sub_1708_add_2_1/CI undriven or does not drive anything -
+     clipped.
+Signal m_OLED12832/sub_1708_add_2_3/S1 undriven or does not drive anything -
+     clipped.
+Signal m_OLED12832/sub_1708_add_2_3/S0 undriven or does not drive anything -
+     clipped.
+Signal m_OLED12832/sub_1708_add_2_5/S1 undriven or does not drive anything -
+     clipped.
+Signal m_OLED12832/sub_1708_add_2_5/S0 undriven or does not drive anything -
+     clipped.
+Signal m_OLED12832/sub_1708_add_2_7/S1 undriven or does not drive anything -
+     clipped.
+Signal m_OLED12832/sub_1708_add_2_7/S0 undriven or does not drive anything -
+     clipped.
+Signal m_OLED12832/sub_1708_add_2_9/S1 undriven or does not drive anything -
+     clipped.
+Signal m_OLED12832/sub_1708_add_2_9/S0 undriven or does not drive anything -
+     clipped.
+Signal m_OLED12832/sub_1708_add_2_11/S1 undriven or does not drive anything -
+     clipped.
+Signal m_OLED12832/sub_1708_add_2_11/S0 undriven or does not drive anything -
+     clipped.
+Signal m_OLED12832/sub_1708_add_2_13/S1 undriven or does not drive anything -
+     clipped.
+Signal m_OLED12832/sub_1708_add_2_13/S0 undriven or does not drive anything -
+     clipped.
+Signal m_OLED12832/sub_1708_add_2_15/S1 undriven or does not drive anything -
+     clipped.
+Signal m_OLED12832/sub_1708_add_2_15/S0 undriven or does not drive anything -
+
+     clipped.
+Signal m_OLED12832/sub_1708_add_2_17/S0 undriven or does not drive anything -
+     clipped.
+Signal m_OLED12832/sub_1708_add_2_17/CO undriven or does not drive anything -
+     clipped.
+Signal m_uart_tx/clk_en_cnt_2263_add_4_1/S0 undriven or does not drive anything
+     - clipped.
+Signal m_uart_tx/clk_en_cnt_2263_add_4_1/CI undriven or does not drive anything
+     - clipped.
+Signal m_uart_tx/clk_en_cnt_2263_add_4_25/S1 undriven or does not drive anything
+     - clipped.
+Signal m_uart_tx/clk_en_cnt_2263_add_4_25/CO undriven or does not drive anything
+     - clipped.
+Signal m_uart_tx/times_2265_add_4_11/S1 undriven or does not drive anything -
+     clipped.
+Signal m_uart_tx/times_2265_add_4_11/CO undriven or does not drive anything -
+     clipped.
+Signal m_uart_tx/times_2265_add_4_1/S0 undriven or does not drive anything -
+     clipped.
+Signal m_uart_tx/times_2265_add_4_1/CI undriven or does not drive anything -
+     clipped.
+Block m_DS18B20Z/i4140_1_lut was optimized away.
+Block m_uart_recv/i10058_1_lut was optimized away.
+Block m_uart_recv/i3188_1_lut was optimized away.
+Block m_clock/time_min_high_3__I_0_i3_4_lut_else_4_lut was optimized away.
+Block m_clock/time_hour_low_3__I_0_i3_4_lut_else_4_lut was optimized away.
+
+
+
+<A name="mrp_mem"></A><B><U><big>Memory Usage</big></U></B>
+
+
+     
+
+
+
+<A name="mrp_gsr"></A><B><U><big>GSR Usage</big></U></B>
+---------
+
+GSR Component:
+   The Global Set Reset (GSR) resource has been used to implement a global reset
+        of the design. The reset signal used for GSR control is 'sys_rst_n_c'.
+        
+
+     GSR Property:
+   The design components with GSR property set to ENABLED will respond to global
+        set reset while the components with GSR property set to DISABLED will
+        not.
+        
+
+     Components with disabled GSR Property
+-------------------------------------
+
+     These components have the GSR property set to DISABLED. The components will
+     not respond to the reset signal 'sys_rst_n_c' via the GSR component.
+
+     Type and number of components of the type: 
+   Register = 128 
+
+
+     Type and instance name of component: 
+   Register : m_uart_tx/uart_data_i1
+   Register : m_uart_tx/clk_uart_43
+   Register : m_uart_tx/clk_en_45
+   Register : m_uart_tx/flag_1_47
+   Register : m_uart_tx/state_50
+   Register : m_uart_tx/clk_en_cnt_2263__i22
+   Register : m_uart_tx/clk_en_cnt_2263__i21
+   Register : m_uart_tx/clk_en_cnt_2263__i20
+   Register : m_uart_tx/clk_en_cnt_2263__i19
+   Register : m_uart_tx/clk_en_cnt_2263__i18
+   Register : m_uart_tx/clk_en_cnt_2263__i17
+   Register : m_uart_tx/clk_en_cnt_2263__i16
+   Register : m_uart_tx/clk_en_cnt_2263__i15
+   Register : m_uart_tx/clk_en_cnt_2263__i14
+   Register : m_uart_tx/clk_en_cnt_2263__i13
+   Register : m_uart_tx/clk_en_cnt_2263__i12
+   Register : m_uart_tx/clk_en_cnt_2263__i11
+   Register : m_uart_tx/clk_en_cnt_2263__i10
+   Register : m_uart_tx/clk_en_cnt_2263__i9
+   Register : m_uart_tx/clk_en_cnt_2263__i8
+   Register : m_uart_tx/clk_en_cnt_2263__i7
+   Register : m_uart_tx/clk_en_cnt_2263__i6
+   Register : m_uart_tx/clk_en_cnt_2263__i5
+   Register : m_uart_tx/clk_en_cnt_2263__i4
+   Register : m_uart_tx/clk_en_cnt_2263__i3
+   Register : m_uart_tx/clk_en_cnt_2263__i2
+   Register : m_uart_tx/clk_en_cnt_2263__i1
+   Register : m_uart_tx/clk_en_cnt_2263__i23
+   Register : m_uart_tx/uart_data_i18
+   Register : m_uart_tx/i_i1
+   Register : m_uart_tx/i_i2
+   Register : m_uart_tx/i_i3
+   Register : m_uart_tx/i_i4
+   Register : m_uart_tx/i_i5
+   Register : m_uart_tx/i_i6
+   Register : m_uart_tx/uart_data_i49
+   Register : m_uart_tx/uart_data_i48
+   Register : m_uart_tx/uart_data_i47
+   Register : m_uart_tx/uart_data_i46
+   Register : m_uart_tx/uart_data_i45
+   Register : m_uart_tx/uart_data_i43
+   Register : m_uart_tx/uart_data_i42
+   Register : m_uart_tx/uart_data_i41
+   Register : m_uart_tx/uart_data_i40
+   Register : m_uart_tx/uart_data_i37
+   Register : m_uart_tx/uart_data_i33
+   Register : m_uart_tx/uart_data_i32
+   Register : m_uart_tx/uart_data_i31
+   Register : m_uart_tx/uart_data_i30
+   Register : m_uart_tx/uart_data_i27
+   Register : m_uart_tx/uart_data_i26
+   Register : m_uart_tx/uart_data_i25
+   Register : m_uart_tx/uart_data_i24
+   Register : m_uart_tx/uart_data_i17
+   Register : m_uart_tx/uart_data_i16
+
+   Register : m_uart_tx/uart_data_i15
+   Register : m_uart_tx/uart_data_i9
+   Register : m_uart_tx/uart_data_i8
+   Register : m_uart_tx/uart_data_i7
+   Register : m_uart_tx/uart_data_i6
+   Register : m_uart_tx/uart_data_i2
+   Register : m_uart_tx/times_2265__i9
+   Register : m_uart_tx/times_2265__i8
+   Register : m_uart_tx/times_2265__i7
+   Register : m_uart_tx/times_2265__i6
+   Register : m_uart_tx/times_2265__i5
+   Register : m_uart_tx/times_2265__i4
+   Register : m_uart_tx/times_2265__i3
+   Register : m_uart_tx/times_2265__i2
+   Register : m_uart_tx/times_2265__i1
+   Register : m_uart_tx/times_2265__i0
+   Register : m_uart_tx/i_i0
+   Register : m_uart_tx/flag_2_51
+   Register : m_uart_tx/uart_out_48
+   Register : m_uart_tx/clk_en_cnt_2263__i0
+   Register : m_clock/min_set_low_i0_i0
+   Register : m_clock/hour_set_high__i0
+   Register : m_clock/hour_set_high__i3
+   Register : m_clock/hour_set_high__i2
+   Register : m_clock/hour_set_high__i1
+   Register : m_clock/min_set_high__i3
+   Register : m_clock/min_set_high__i2
+   Register : m_clock/min_set_high__i1
+   Register : m_clock/hour_set_low__i3
+   Register : m_clock/hour_set_low__i2
+   Register : m_clock/hour_set_low__i1
+   Register : m_clock/min_set_low_i0_i3
+   Register : m_clock/min_set_low_i0_i2
+   Register : m_clock/min_set_low_i0_i1
+   Register : m_clock/min_set_high__i0
+   Register : m_clock/hour_set_low__i0
+   Register : m_clock/clk_1ms_140
+   Register : m_clock/clk_500ms_142
+   Register : m_DS18B20Z/data_out_i0_i0
+   Register : m_DS18B20Z/temperature_buffer_i0_i1
+   Register : m_DS18B20Z/temperature_buffer_i0_i2
+   Register : m_DS18B20Z/temperature_buffer_i0_i3
+   Register : m_DS18B20Z/temperature_buffer_i0_i4
+   Register : m_DS18B20Z/temperature_buffer_i0_i5
+   Register : m_DS18B20Z/temperature_buffer_i0_i6
+   Register : m_DS18B20Z/temperature_buffer_i0_i7
+   Register : m_DS18B20Z/num_delay_i0_i2
+   Register : m_DS18B20Z/num_delay_i0_i4
+   Register : m_DS18B20Z/num_delay_i0_i5
+   Register : m_DS18B20Z/num_delay_i0_i6
+   Register : m_DS18B20Z/num_delay_i0_i0
+   Register : m_DS18B20Z/num_delay_i0_i12
+   Register : m_DS18B20Z/num_delay_i0_i8
+   Register : m_DS18B20Z/num_delay_i0_i3
+   Register : m_DS18B20Z/num_delay_i0_i1
+   Register : m_DS18B20Z/data_wr_i0_i7
+
+   Register : m_DS18B20Z/data_wr_i0_i6
+   Register : m_DS18B20Z/data_wr_i0_i1
+   Register : m_DS18B20Z/data_out_i0_i11
+   Register : m_DS18B20Z/data_out_i0_i10
+   Register : m_DS18B20Z/data_out_i0_i9
+   Register : m_DS18B20Z/data_out_i0_i8
+   Register : m_DS18B20Z/data_out_i0_i7
+   Register : m_DS18B20Z/data_out_i0_i6
+   Register : m_DS18B20Z/data_out_i0_i5
+   Register : m_DS18B20Z/data_out_i0_i4
+   Register : m_DS18B20Z/data_out_i0_i3
+   Register : m_DS18B20Z/data_out_i0_i2
+   Register : m_DS18B20Z/data_out_i0_i1
+   Register : m_DS18B20Z/data_wr_buffer_i0_i7
+   Register : m_DS18B20Z/data_wr_buffer_i0_i6
+   Register : m_DS18B20Z/data_wr_buffer_i0_i4
+   Register : m_DS18B20Z/temperature_buffer_i0_i0
+
+     Components with synchronous local reset also reset by asynchronous GSR
+----------------------------------------------------------------------
+
+     These components have the GSR property set to ENABLED and the local reset
+     is synchronous. The components will respond to the synchronous local reset
+     and to the unrelated asynchronous reset signal 'sys_rst_n_c' via the GSR
+     component.
+
+     Type and number of components of the type: 
+   Register = 231 
+
+     Type and instance name of component: 
+   Register : m_OLED12832/cnt_delay_i0_i6
+   Register : m_OLED12832/cnt_delay_i0_i5
+   Register : m_OLED12832/cnt_main_i0_i0
+   Register : m_OLED12832/cnt_delay_i0_i0
+   Register : m_OLED12832/cnt_delay_i0_i4
+   Register : m_OLED12832/cnt_delay_i0_i15
+   Register : m_OLED12832/cnt_i0_i0
+   Register : m_OLED12832/cnt_delay_i0_i14
+   Register : m_OLED12832/cnt_delay_i0_i13
+   Register : m_OLED12832/cnt_delay_i0_i12
+   Register : m_OLED12832/cnt_write_i0_i0
+   Register : m_OLED12832/cnt_delay_i0_i11
+   Register : m_OLED12832/cnt_delay_i0_i10
+   Register : m_OLED12832/cnt_init_i0_i1
+   Register : m_OLED12832/cnt_init_i0_i2
+   Register : m_OLED12832/cnt_init_i0_i3
+   Register : m_OLED12832/cnt_init_i0_i4
+   Register : m_OLED12832/cnt_scan_i0_i1
+   Register : m_OLED12832/cnt_scan_i0_i2
+   Register : m_OLED12832/cnt_delay_i0_i9
+   Register : m_OLED12832/cnt_delay_i0_i8
+   Register : m_OLED12832/cnt_delay_i0_i7
+   Register : m_OLED12832/x_ph_i0_i2
+   Register : m_OLED12832/cnt_scan_i0_i3
+   Register : m_OLED12832/cnt_i0_i1
+   Register : m_OLED12832/cnt_i0_i2
+
+   Register : m_OLED12832/cnt_i0_i3
+   Register : m_OLED12832/num_2268__i1
+   Register : m_OLED12832/num_2268__i3
+   Register : m_OLED12832/num_2268__i5
+   Register : m_OLED12832/num_2268__i6
+   Register : m_OLED12832/cnt_i0_i4
+   Register : m_OLED12832/cnt_delay_i0_i3
+   Register : m_OLED12832/cnt_main_i0_i1
+   Register : m_OLED12832/num_2268__i7
+   Register : m_OLED12832/cnt_main_i0_i2
+   Register : m_OLED12832/cnt_i0_i5
+   Register : m_OLED12832/cnt_i0_i6
+   Register : m_OLED12832/state_i0_i2
+   Register : m_OLED12832/state_i0_i3
+   Register : m_OLED12832/state_i0_i4
+   Register : m_OLED12832/state_i0_i5
+   Register : m_OLED12832/cnt_main_i0_i3
+   Register : m_OLED12832/cnt_i0_i7
+   Register : m_OLED12832/cnt_i0_i8
+   Register : m_OLED12832/cnt_i0_i9
+   Register : m_OLED12832/cnt_i0_i10
+   Register : m_OLED12832/cnt_i0_i11
+   Register : m_OLED12832/cnt_i0_i12
+   Register : m_OLED12832/cnt_i0_i13
+   Register : m_OLED12832/cnt_i0_i14
+   Register : m_OLED12832/cnt_i0_i15
+   Register : m_OLED12832/cnt_write_i0_i1
+   Register : m_OLED12832/cnt_write_i0_i2
+   Register : m_OLED12832/cnt_write_i0_i3
+   Register : m_OLED12832/cnt_write_i0_i4
+   Register : m_OLED12832/cnt_delay_i0_i2
+   Register : m_OLED12832/cnt_delay_i0_i1
+   Register : m_OLED12832/x_ph_i0_i4
+   Register : m_OLED12832/cnt_main_i0_i4
+   Register : m_OLED12832/cnt_scan_i0_i0
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i0
+   Register : m_uart2tone/tone_i1
+   Register : m_uart2tone/tone_i2
+   Register : m_uart2tone/tone_i3
+   Register : m_uart2tone/alarm_cnt_2271__i0
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i23
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i22
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i21
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i20
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i19
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i18
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i17
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i16
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i15
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i14
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i13
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i12
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i11
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i10
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i9
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i8
+
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i7
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i6
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i5
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i4
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i3
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i2
+   Register : m_uart2tone/clk_1s_cnt_2272_2273__i1
+   Register : m_uart2tone/alarm_cnt_2271__i1
+   Register : m_uart2tone/alarm_cnt_2271__i2
+   Register : m_uart2tone/alarm_cnt_2271__i3
+   Register : m_uart2tone/alarm_cnt_2271__i4
+   Register : m_uart2tone/alarm_cnt_2271__i5
+   Register : m_uart2tone/alarm_cnt_2271__i6
+   Register : m_clock/ms_2276__i6
+   Register : m_clock/ms_2276__i7
+   Register : m_clock/ms_2276__i8
+   Register : m_clock/ms_2276__i9
+   Register : m_clock/ms_2276__i10
+   Register : m_clock/ms_2276__i11
+   Register : m_clock/ms_2276__i12
+   Register : m_clock/ms_2276__i13
+   Register : m_clock/ms_2276__i14
+   Register : m_clock/ms_2276__i15
+   Register : m_clock/clk_1ms_cnt_2278__i11
+   Register : m_clock/clk_1ms_cnt_2278__i10
+   Register : m_clock/clk_1ms_cnt_2278__i9
+   Register : m_clock/clk_1ms_cnt_2278__i8
+   Register : m_clock/clk_1ms_cnt_2278__i7
+   Register : m_clock/clk_1ms_cnt_2278__i6
+   Register : m_clock/clk_1ms_cnt_2278__i5
+   Register : m_clock/clk_1ms_cnt_2278__i4
+   Register : m_clock/clk_1ms_cnt_2278__i3
+   Register : m_clock/clk_1ms_cnt_2278__i2
+   Register : m_clock/clk_1ms_cnt_2278__i1
+   Register : m_clock/ms_2276__i1
+   Register : m_clock/ms_2276__i2
+   Register : m_clock/ms_2276__i3
+   Register : m_clock/ms_2276__i0
+   Register : m_clock/clk_500ms_cnt_2275__i10
+   Register : m_clock/clk_500ms_cnt_2275__i9
+   Register : m_clock/clk_500ms_cnt_2275__i8
+   Register : m_clock/clk_500ms_cnt_2275__i7
+   Register : m_clock/clk_500ms_cnt_2275__i6
+   Register : m_clock/clk_500ms_cnt_2275__i5
+   Register : m_clock/clk_500ms_cnt_2275__i4
+   Register : m_clock/clk_500ms_cnt_2275__i3
+   Register : m_clock/clk_500ms_cnt_2275__i2
+   Register : m_clock/clk_500ms_cnt_2275__i1
+   Register : m_clock/clk_1ms_cnt_2278__i12
+   Register : m_clock/clk_500ms_cnt_2275__i0
+   Register : m_clock/ms_2276__i4
+   Register : m_clock/clk_1ms_cnt_2278__i0
+   Register : m_clock/ms_2276__i5
+   Register : m_Beeper/time_cnt_2269__i0
+   Register : m_Beeper/time_cnt_2269__i17
+   Register : m_Beeper/time_cnt_2269__i16
+
+   Register : m_Beeper/time_cnt_2269__i15
+   Register : m_Beeper/time_cnt_2269__i14
+   Register : m_Beeper/time_cnt_2269__i13
+   Register : m_Beeper/time_cnt_2269__i12
+   Register : m_Beeper/time_cnt_2269__i11
+   Register : m_Beeper/time_cnt_2269__i10
+   Register : m_Beeper/time_cnt_2269__i9
+   Register : m_Beeper/time_cnt_2269__i8
+   Register : m_Beeper/time_cnt_2269__i7
+   Register : m_Beeper/time_cnt_2269__i6
+   Register : m_Beeper/time_cnt_2269__i5
+   Register : m_Beeper/time_cnt_2269__i4
+   Register : m_Beeper/time_cnt_2269__i3
+   Register : m_Beeper/time_cnt_2269__i2
+   Register : m_Beeper/time_cnt_2269__i1
+   Register : m_uart_recv/rxdata__i0
+   Register : m_uart_recv/rx_cnt_FSM_i0
+   Register : m_uart_recv/rx_cnt_FSM_i15
+   Register : m_uart_recv/rx_cnt_FSM_i14
+   Register : m_uart_recv/rx_cnt_FSM_i13
+   Register : m_uart_recv/rx_cnt_FSM_i12
+   Register : m_uart_recv/rx_cnt_FSM_i11
+   Register : m_uart_recv/rx_cnt_FSM_i10
+   Register : m_uart_recv/rx_cnt_FSM_i9
+   Register : m_uart_recv/rx_cnt_FSM_i8
+   Register : m_uart_recv/rx_cnt_FSM_i7
+   Register : m_uart_recv/rx_cnt_FSM_i6
+   Register : m_uart_recv/rx_cnt_FSM_i5
+   Register : m_uart_recv/rx_cnt_FSM_i4
+   Register : m_uart_recv/rx_cnt_FSM_i3
+   Register : m_uart_recv/rx_cnt_FSM_i2
+   Register : m_uart_recv/rx_cnt_FSM_i1
+   Register : m_uart_recv/clk_cnt_2267__i0
+   Register : m_uart_recv/rxdata__i4
+   Register : m_uart_recv/rxdata__i3
+   Register : m_uart_recv/rxdata__i2
+   Register : m_uart_recv/rxdata__i1
+   Register : m_uart_recv/uart_data__i5
+   Register : m_uart_recv/uart_data__i4
+   Register : m_uart_recv/uart_data__i3
+   Register : m_uart_recv/uart_data__i2
+   Register : m_uart_recv/clk_cnt_2267__i15
+   Register : m_uart_recv/clk_cnt_2267__i14
+   Register : m_uart_recv/clk_cnt_2267__i13
+   Register : m_uart_recv/clk_cnt_2267__i12
+   Register : m_uart_recv/clk_cnt_2267__i11
+   Register : m_uart_recv/clk_cnt_2267__i10
+   Register : m_uart_recv/clk_cnt_2267__i9
+   Register : m_uart_recv/clk_cnt_2267__i8
+   Register : m_uart_recv/clk_cnt_2267__i7
+   Register : m_uart_recv/clk_cnt_2267__i6
+   Register : m_uart_recv/clk_cnt_2267__i5
+   Register : m_uart_recv/clk_cnt_2267__i4
+   Register : m_uart_recv/clk_cnt_2267__i3
+   Register : m_uart_recv/clk_cnt_2267__i2
+   Register : m_uart_recv/clk_cnt_2267__i1
+
+   Register : m_uart_recv/uart_data__i1
+   Register : m_DS18B20Z/cnt_delay_i0_i1
+   Register : m_DS18B20Z/cnt_delay_i0_i2
+   Register : m_DS18B20Z/cnt_delay_i0_i3
+   Register : m_DS18B20Z/cnt_delay_i0_i4
+   Register : m_DS18B20Z/cnt_delay_i0_i5
+   Register : m_DS18B20Z/cnt_delay_i0_i6
+   Register : m_DS18B20Z/cnt_delay_i0_i7
+   Register : m_DS18B20Z/cnt_main_i0_i0
+   Register : m_DS18B20Z/cnt_delay_i0_i8
+   Register : m_DS18B20Z/cnt_init_i0_i0
+   Register : m_DS18B20Z/cnt_write_i0_i0
+   Register : m_DS18B20Z/cnt_delay_i0_i9
+   Register : m_DS18B20Z/cnt_delay_i0_i10
+   Register : m_DS18B20Z/cnt_delay_i0_i11
+   Register : m_DS18B20Z/cnt_delay_i0_i12
+   Register : m_DS18B20Z/cnt_delay_i0_i0
+   Register : m_DS18B20Z/cnt_delay_i0_i13
+   Register : m_DS18B20Z/cnt_1mhz_2261__i2
+   Register : m_DS18B20Z/cnt_delay_i0_i14
+   Register : m_DS18B20Z/cnt_delay_i0_i15
+   Register : m_DS18B20Z/cnt_1mhz_2261__i1
+   Register : m_DS18B20Z/cnt_delay_i0_i16
+   Register : m_DS18B20Z/cnt_delay_i0_i17
+   Register : m_DS18B20Z/cnt_delay_i0_i18
+   Register : m_DS18B20Z/cnt_delay_i0_i19
+   Register : m_DS18B20Z/cnt_read_i0_i1
+   Register : m_DS18B20Z/cnt_read_i0_i2
+   Register : m_DS18B20Z/cnt_write_i0_i1
+   Register : m_DS18B20Z/cnt_write_i0_i2
+   Register : m_DS18B20Z/cnt_write_i0_i3
+   Register : m_DS18B20Z/cnt_init_i0_i1
+   Register : m_DS18B20Z/cnt_init_i0_i2
+   Register : m_DS18B20Z/cnt_main_i0_i1
+   Register : m_DS18B20Z/cnt_main_i0_i2
+   Register : m_DS18B20Z/cnt_main_i0_i3
+   Register : m_DS18B20Z/cnt_1mhz_2261__i0
+
+
+
+<A name="mrp_runtime"></A><B><U><big>Run Time and Memory Usage</big></U></B>
+-------------------------
+
+   Total CPU Time: 1 secs  
+   Total REAL Time: 2 secs  
+   Peak Memory Usage: 62 MB
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+     Copyright (c) 1995 AT&T Corp.   All rights reserved.
+     Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+     Copyright (c) 2001 Agere Systems   All rights reserved.
+     Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights
+     reserved.
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

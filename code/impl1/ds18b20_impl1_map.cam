@@ -1,0 +1,128 @@
+[ START MERGED ]
+n6384 m_DS18B20Z/one_wire_N_273
+m_clock/n27764 m_clock/min_set_high_2
+m_clock/n27767 m_clock/hour_set_low_2
+m_uart_recv/n5318 rx_flag
+m_uart_recv/n12373 m_uart_recv/uart_data_7__N_1323
+[ END MERGED ]
+[ START CLIPPED ]
+VCC_net
+m_DS18B20Z/sub_1707_add_2_9/S1
+m_DS18B20Z/sub_1707_add_2_9/S0
+m_DS18B20Z/sub_1707_add_2_11/S1
+m_DS18B20Z/sub_1707_add_2_11/S0
+m_DS18B20Z/sub_1707_add_2_13/S1
+m_DS18B20Z/sub_1707_add_2_13/S0
+m_DS18B20Z/sub_1707_add_2_15/S1
+m_DS18B20Z/sub_1707_add_2_15/S0
+m_DS18B20Z/sub_1707_add_2_17/S1
+m_DS18B20Z/sub_1707_add_2_17/S0
+m_DS18B20Z/sub_1707_add_2_19/S1
+m_DS18B20Z/sub_1707_add_2_19/S0
+m_DS18B20Z/sub_1707_add_2_21/S0
+m_DS18B20Z/sub_1707_add_2_21/CO
+m_DS18B20Z/add_77_1/S0
+m_DS18B20Z/add_77_1/CI
+m_DS18B20Z/add_77_21/S1
+m_DS18B20Z/add_77_21/CO
+m_DS18B20Z/sub_1707_add_2_1/S1
+m_DS18B20Z/sub_1707_add_2_1/S0
+m_DS18B20Z/sub_1707_add_2_1/CI
+m_DS18B20Z/sub_1707_add_2_3/S1
+m_DS18B20Z/sub_1707_add_2_3/S0
+m_DS18B20Z/sub_1707_add_2_5/S1
+m_DS18B20Z/sub_1707_add_2_5/S0
+m_DS18B20Z/sub_1707_add_2_7/S1
+m_DS18B20Z/sub_1707_add_2_7/S0
+m_uart_recv/clk_cnt_2267_add_4_17/S1
+m_uart_recv/clk_cnt_2267_add_4_17/CO
+m_uart_recv/clk_cnt_2267_add_4_1/S0
+m_uart_recv/clk_cnt_2267_add_4_1/CI
+m_Beeper/time_cnt_2269_add_4_19/S1
+m_Beeper/time_cnt_2269_add_4_19/CO
+m_Beeper/add_1383_1/S0
+m_Beeper/add_1383_1/CI
+m_Beeper/add_1383_19/CO
+m_Beeper/time_cnt_2269_add_4_1/S0
+m_Beeper/time_cnt_2269_add_4_1/CI
+m_clock/clk_1ms_cnt_2278_add_4_1/S0
+m_clock/clk_1ms_cnt_2278_add_4_1/CI
+m_clock/clk_1ms_cnt_2278_add_4_13/CO
+m_clock/clk_500ms_cnt_2275_add_4_1/S0
+m_clock/clk_500ms_cnt_2275_add_4_1/CI
+m_clock/clk_500ms_cnt_2275_add_4_11/CO
+m_clock/ms_2276_add_4_1/S0
+m_clock/ms_2276_add_4_1/CI
+m_clock/ms_2276_add_4_17/S1
+m_clock/ms_2276_add_4_17/CO
+m_uart2tone/alarm_cnt_2271_add_4_1/S0
+m_uart2tone/alarm_cnt_2271_add_4_1/CI
+m_uart2tone/alarm_cnt_2271_add_4_7/CO
+m_uart2tone/clk_1s_cnt_2272_2273_add_4_1/S0
+m_uart2tone/clk_1s_cnt_2272_2273_add_4_1/CI
+m_uart2tone/clk_1s_cnt_2272_2273_add_4_25/S1
+m_uart2tone/clk_1s_cnt_2272_2273_add_4_25/CO
+m_OLED12832/num_2268_add_4_1/S0
+m_OLED12832/num_2268_add_4_1/CI
+m_OLED12832/num_2268_add_4_9/S1
+m_OLED12832/num_2268_add_4_9/CO
+m_OLED12832/add_32_1/S0
+m_OLED12832/add_32_1/CI
+m_OLED12832/add_32_17/S1
+m_OLED12832/add_32_17/CO
+m_OLED12832/add_106_1/S0
+m_OLED12832/add_106_1/CI
+m_OLED12832/add_106_17/S1
+m_OLED12832/add_106_17/CO
+m_OLED12832/sub_1708_add_2_1/S1
+m_OLED12832/sub_1708_add_2_1/S0
+m_OLED12832/sub_1708_add_2_1/CI
+m_OLED12832/sub_1708_add_2_3/S1
+m_OLED12832/sub_1708_add_2_3/S0
+m_OLED12832/sub_1708_add_2_5/S1
+m_OLED12832/sub_1708_add_2_5/S0
+m_OLED12832/sub_1708_add_2_7/S1
+m_OLED12832/sub_1708_add_2_7/S0
+m_OLED12832/sub_1708_add_2_9/S1
+m_OLED12832/sub_1708_add_2_9/S0
+m_OLED12832/sub_1708_add_2_11/S1
+m_OLED12832/sub_1708_add_2_11/S0
+m_OLED12832/sub_1708_add_2_13/S1
+m_OLED12832/sub_1708_add_2_13/S0
+m_OLED12832/sub_1708_add_2_15/S1
+m_OLED12832/sub_1708_add_2_15/S0
+m_OLED12832/sub_1708_add_2_17/S0
+m_OLED12832/sub_1708_add_2_17/CO
+m_uart_tx/clk_en_cnt_2263_add_4_1/S0
+m_uart_tx/clk_en_cnt_2263_add_4_1/CI
+m_uart_tx/clk_en_cnt_2263_add_4_25/S1
+m_uart_tx/clk_en_cnt_2263_add_4_25/CO
+m_uart_tx/times_2265_add_4_11/S1
+m_uart_tx/times_2265_add_4_11/CO
+m_uart_tx/times_2265_add_4_1/S0
+m_uart_tx/times_2265_add_4_1/CI
+[ END CLIPPED ]
+[ START DESIGN PREFS ]
+SCHEMATIC START ;
+# map:  version Diamond (64-bit) 3.10.0.111.2 -- WARNING: Map write only section -- Fri Feb 19 19:37:29 2021
+
+SYSCONFIG SDM_PORT=DISABLE SLAVE_SPI_PORT=DISABLE I2C_PORT=DISABLE MASTER_SPI_PORT=DISABLE COMPRESS_CONFIG=ON CONFIGURATION=CFG MY_ASSP=OFF ONE_TIME_PROGRAM=OFF CONFIG_SECURE=OFF MCCLK_FREQ=2.08 JTAG_PORT=ENABLE ENABLE_TRANSFR=DISABLE SHAREDEBRINIT=DISABLE MUX_CONFIGURATION_PORTS=DISABLE BACKGROUND_RECONFIG=OFF INBUF=ON ;
+LOCATE COMP "sys_clk" SITE "C1" ;
+LOCATE COMP "sys_rst_n" SITE "M10" ;
+LOCATE COMP "piano_out" SITE "P8" ;
+LOCATE COMP "led" SITE "P9" ;
+LOCATE COMP "uart_txd" SITE "B8" ;
+LOCATE COMP "oled_dat" SITE "F12" ;
+LOCATE COMP "oled_clk" SITE "E12" ;
+LOCATE COMP "oled_dcn" SITE "F13" ;
+LOCATE COMP "oled_rst" SITE "G12" ;
+LOCATE COMP "oled_csn" SITE "F14" ;
+LOCATE COMP "one_wire" SITE "N7" ;
+LOCATE COMP "tone_en" SITE "M9" ;
+LOCATE COMP "uart_rxd" SITE "C8" ;
+LOCATE COMP "min_d" SITE "L14" ;
+LOCATE COMP "min_a" SITE "M13" ;
+LOCATE COMP "hour_d" SITE "M14" ;
+LOCATE COMP "hour_a" SITE "N14" ;
+SCHEMATIC END ;
+[ END DESIGN PREFS ]

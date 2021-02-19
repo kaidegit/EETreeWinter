@@ -1,0 +1,712 @@
+--------------------------------------------------------------------------------
+Lattice Synthesis Timing Report, Version  
+Fri Feb 19 19:37:28 2021
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Design:     ds18b20_top
+Constraint file:  
+Report level:    verbose report, limited to 3 items per constraint
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+Constraint: create_clock -period 5.000000 -name clk5 [get_nets \m_uart_tx/clk_en]
+            1 item scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed:  The following path meets requirements by 2.047ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3AX    CK             \m_uart_tx/flag_1_47  (from \m_uart_tx/clk_en +)
+   Destination:    FD1S3AX    D              \m_uart_tx/flag_1_47  (to \m_uart_tx/clk_en +)
+
+   Delay:                   2.807ns  (30.3% logic, 69.7% route), 2 logic levels.
+
+ Constraint Details:
+
+      2.807ns data_path \m_uart_tx/flag_1_47 to \m_uart_tx/flag_1_47 meets
+      5.000ns delay constraint less
+      0.146ns L_S requirement (totaling 4.854ns) by 2.047ns
+
+ Path Details: \m_uart_tx/flag_1_47 to \m_uart_tx/flag_1_47
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \m_uart_tx/flag_1_47 (from \m_uart_tx/clk_en)
+Route         4   e 1.168                                  \m_uart_tx/flag_1
+LUT4        ---     0.448              A to Z              \m_uart_tx/flag_1_I_0_1_lut
+Route         1   e 0.788                                  \m_uart_tx/flag_1_N_1248
+                  --------
+                    2.807  (30.3% logic, 69.7% route), 2 logic levels.
+
+Report: 2.953 ns is the maximum delay for this constraint.
+
+
+
+================================================================================
+Constraint: create_clock -period 5.000000 -name clk4 [get_nets \m_uart_tx/clk_uart]
+            186 items scored, 108 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error:  The following path violates requirements by 2.930ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3IX    CK             \m_uart_tx/i_i1  (from \m_uart_tx/clk_uart +)
+   Destination:    FD1P3AX    D              \m_uart_tx/uart_out_48  (to \m_uart_tx/clk_uart +)
+
+   Delay:                   7.784ns  (36.4% logic, 63.6% route), 8 logic levels.
+
+ Constraint Details:
+
+      7.784ns data_path \m_uart_tx/i_i1 to \m_uart_tx/uart_out_48 violates
+      5.000ns delay constraint less
+      0.146ns L_S requirement (totaling 4.854ns) by 2.930ns
+
+ Path Details: \m_uart_tx/i_i1 to \m_uart_tx/uart_out_48
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \m_uart_tx/i_i1 (from \m_uart_tx/clk_uart)
+Route        26   e 1.741                                  \m_uart_tx/i[1]
+LUT4        ---     0.448              B to Z              \m_uart_tx/uart_data[106]_bdd_3_lut
+Route         1   e 0.020                                  \m_uart_tx/n27235
+MUXL5       ---     0.212           ALUT to Z              \m_uart_tx/i24307
+Route         1   e 0.788                                  \m_uart_tx/n27237
+LUT4        ---     0.448              A to Z              \m_uart_tx/n27237_bdd_3_lut_24636
+Route         1   e 0.020                                  \m_uart_tx/n27238
+MUXL5       ---     0.212           BLUT to Z              \m_uart_tx/i24309
+Route         1   e 0.788                                  \m_uart_tx/n27239
+LUT4        ---     0.448              A to Z              \m_uart_tx/i23388_4_lut
+Route         1   e 0.788                                  \m_uart_tx/n25743
+LUT4        ---     0.448              B to Z              \m_uart_tx/i23390_3_lut
+Route         1   e 0.020                                  \m_uart_tx/n25745
+MUXL5       ---     0.212           ALUT to Z              \m_uart_tx/i23391
+Route         1   e 0.788                                  \m_uart_tx/uart_out_N_1245
+                  --------
+                    7.784  (36.4% logic, 63.6% route), 8 logic levels.
+
+
+Error:  The following path violates requirements by 2.930ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3IX    CK             \m_uart_tx/i_i1  (from \m_uart_tx/clk_uart +)
+   Destination:    FD1P3AX    D              \m_uart_tx/uart_out_48  (to \m_uart_tx/clk_uart +)
+
+   Delay:                   7.784ns  (36.4% logic, 63.6% route), 8 logic levels.
+
+ Constraint Details:
+
+      7.784ns data_path \m_uart_tx/i_i1 to \m_uart_tx/uart_out_48 violates
+      5.000ns delay constraint less
+      0.146ns L_S requirement (totaling 4.854ns) by 2.930ns
+
+ Path Details: \m_uart_tx/i_i1 to \m_uart_tx/uart_out_48
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \m_uart_tx/i_i1 (from \m_uart_tx/clk_uart)
+Route        26   e 1.741                                  \m_uart_tx/i[1]
+LUT4        ---     0.448              A to Z              \m_uart_tx/uart_data[106]_bdd_2_lut
+Route         1   e 0.020                                  \m_uart_tx/n27236
+MUXL5       ---     0.212           BLUT to Z              \m_uart_tx/i24307
+Route         1   e 0.788                                  \m_uart_tx/n27237
+LUT4        ---     0.448              A to Z              \m_uart_tx/n27237_bdd_3_lut_24636
+Route         1   e 0.020                                  \m_uart_tx/n27238
+MUXL5       ---     0.212           BLUT to Z              \m_uart_tx/i24309
+Route         1   e 0.788                                  \m_uart_tx/n27239
+LUT4        ---     0.448              A to Z              \m_uart_tx/i23388_4_lut
+Route         1   e 0.788                                  \m_uart_tx/n25743
+LUT4        ---     0.448              B to Z              \m_uart_tx/i23390_3_lut
+Route         1   e 0.020                                  \m_uart_tx/n25745
+MUXL5       ---     0.212           ALUT to Z              \m_uart_tx/i23391
+Route         1   e 0.788                                  \m_uart_tx/uart_out_N_1245
+                  --------
+                    7.784  (36.4% logic, 63.6% route), 8 logic levels.
+
+
+Error:  The following path violates requirements by 2.709ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3IX    CK             \m_uart_tx/i_i0  (from \m_uart_tx/clk_uart +)
+   Destination:    FD1P3AX    D              \m_uart_tx/uart_out_48  (to \m_uart_tx/clk_uart +)
+
+   Delay:                   7.563ns  (34.6% logic, 65.4% route), 7 logic levels.
+
+ Constraint Details:
+
+      7.563ns data_path \m_uart_tx/i_i0 to \m_uart_tx/uart_out_48 violates
+      5.000ns delay constraint less
+      0.146ns L_S requirement (totaling 4.854ns) by 2.709ns
+
+ Path Details: \m_uart_tx/i_i0 to \m_uart_tx/uart_out_48
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \m_uart_tx/i_i0 (from \m_uart_tx/clk_uart)
+Route        33   e 1.752                                  \m_uart_tx/i[0]
+LUT4        ---     0.448              C to Z              \m_uart_tx/n82_bdd_3_lut_4_lut
+Route         1   e 0.020                                  \m_uart_tx/n27123
+MUXL5       ---     0.212           ALUT to Z              \m_uart_tx/i24639
+Route         1   e 0.788                                  \m_uart_tx/n28064
+LUT4        ---     0.448              A to Z              \m_uart_tx/n28064_bdd_3_lut
+Route         1   e 0.788                                  \m_uart_tx/n28065
+LUT4        ---     0.448              B to Z              \m_uart_tx/n28072_bdd_3_lut
+Route         1   e 0.788                                  \m_uart_tx/n28073
+LUT4        ---     0.448              A to Z              \m_uart_tx/i23389_3_lut
+Route         1   e 0.020                                  \m_uart_tx/n25744
+MUXL5       ---     0.212           BLUT to Z              \m_uart_tx/i23391
+Route         1   e 0.788                                  \m_uart_tx/uart_out_N_1245
+                  --------
+                    7.563  (34.6% logic, 65.4% route), 7 logic levels.
+
+Warning: 7.930 ns is the maximum delay for this constraint.
+
+
+
+================================================================================
+Constraint: create_clock -period 5.000000 -name clk3 [get_nets \m_DS18B20Z/clk_1mhz]
+            0 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Constraint: create_clock -period 5.000000 -name clk2 [get_nets \m_clock/clk_1ms]
+            893 items scored, 541 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error:  The following path violates requirements by 3.674ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3IX    CK             \m_clock/ms_2276__i6  (from \m_clock/clk_1ms +)
+   Destination:    FD1P3AX    SP             \m_clock/time_hour_high_i3  (to \m_clock/clk_1ms +)
+
+   Delay:                   8.415ns  (31.4% logic, 68.6% route), 6 logic levels.
+
+ Constraint Details:
+
+      8.415ns data_path \m_clock/ms_2276__i6 to \m_clock/time_hour_high_i3 violates
+      5.000ns delay constraint less
+      0.259ns LCE_S requirement (totaling 4.741ns) by 3.674ns
+
+ Path Details: \m_clock/ms_2276__i6 to \m_clock/time_hour_high_i3
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \m_clock/ms_2276__i6 (from \m_clock/clk_1ms)
+Route         2   e 1.002                                  \m_clock/ms[6]
+LUT4        ---     0.448              B to Z              \m_clock/i2_4_lut_adj_79
+Route         1   e 0.788                                  \m_clock/n21915
+LUT4        ---     0.448              D to Z              \m_clock/i1_4_lut_adj_78
+Route         1   e 0.788                                  \m_clock/n30
+LUT4        ---     0.448              D to Z              \m_clock/i3_4_lut
+Route         4   e 1.120                                  \m_clock/n25045
+LUT4        ---     0.448              B to Z              \m_clock/i4_4_lut
+Route         2   e 0.954                                  \m_clock/n1169
+LUT4        ---     0.448              C to Z              \m_clock/i1_4_lut_4_lut
+Route         4   e 1.120                                  \m_clock/clk_1ms_enable_21
+                  --------
+                    8.415  (31.4% logic, 68.6% route), 6 logic levels.
+
+
+Error:  The following path violates requirements by 3.674ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3IX    CK             \m_clock/ms_2276__i6  (from \m_clock/clk_1ms +)
+   Destination:    FD1P3AX    SP             \m_clock/time_hour_high_i2  (to \m_clock/clk_1ms +)
+
+   Delay:                   8.415ns  (31.4% logic, 68.6% route), 6 logic levels.
+
+ Constraint Details:
+
+      8.415ns data_path \m_clock/ms_2276__i6 to \m_clock/time_hour_high_i2 violates
+      5.000ns delay constraint less
+      0.259ns LCE_S requirement (totaling 4.741ns) by 3.674ns
+
+ Path Details: \m_clock/ms_2276__i6 to \m_clock/time_hour_high_i2
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \m_clock/ms_2276__i6 (from \m_clock/clk_1ms)
+Route         2   e 1.002                                  \m_clock/ms[6]
+LUT4        ---     0.448              B to Z              \m_clock/i2_4_lut_adj_79
+Route         1   e 0.788                                  \m_clock/n21915
+LUT4        ---     0.448              D to Z              \m_clock/i1_4_lut_adj_78
+Route         1   e 0.788                                  \m_clock/n30
+LUT4        ---     0.448              D to Z              \m_clock/i3_4_lut
+Route         4   e 1.120                                  \m_clock/n25045
+LUT4        ---     0.448              B to Z              \m_clock/i4_4_lut
+Route         2   e 0.954                                  \m_clock/n1169
+LUT4        ---     0.448              C to Z              \m_clock/i1_4_lut_4_lut
+Route         4   e 1.120                                  \m_clock/clk_1ms_enable_21
+                  --------
+                    8.415  (31.4% logic, 68.6% route), 6 logic levels.
+
+
+Error:  The following path violates requirements by 3.674ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3IX    CK             \m_clock/ms_2276__i6  (from \m_clock/clk_1ms +)
+   Destination:    FD1P3AX    SP             \m_clock/time_hour_high_i1  (to \m_clock/clk_1ms +)
+
+   Delay:                   8.415ns  (31.4% logic, 68.6% route), 6 logic levels.
+
+ Constraint Details:
+
+      8.415ns data_path \m_clock/ms_2276__i6 to \m_clock/time_hour_high_i1 violates
+      5.000ns delay constraint less
+      0.259ns LCE_S requirement (totaling 4.741ns) by 3.674ns
+
+ Path Details: \m_clock/ms_2276__i6 to \m_clock/time_hour_high_i1
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \m_clock/ms_2276__i6 (from \m_clock/clk_1ms)
+Route         2   e 1.002                                  \m_clock/ms[6]
+LUT4        ---     0.448              B to Z              \m_clock/i2_4_lut_adj_79
+Route         1   e 0.788                                  \m_clock/n21915
+LUT4        ---     0.448              D to Z              \m_clock/i1_4_lut_adj_78
+Route         1   e 0.788                                  \m_clock/n30
+LUT4        ---     0.448              D to Z              \m_clock/i3_4_lut
+Route         4   e 1.120                                  \m_clock/n25045
+LUT4        ---     0.448              B to Z              \m_clock/i4_4_lut
+Route         2   e 0.954                                  \m_clock/n1169
+LUT4        ---     0.448              C to Z              \m_clock/i1_4_lut_4_lut
+Route         4   e 1.120                                  \m_clock/clk_1ms_enable_21
+                  --------
+                    8.415  (31.4% logic, 68.6% route), 6 logic levels.
+
+Warning: 8.674 ns is the maximum delay for this constraint.
+
+
+
+================================================================================
+Constraint: create_clock -period 5.000000 -name clk1 [get_nets \m_clock/clk_500ms]
+            38 items scored, 32 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error:  The following path violates requirements by 2.488ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3IX    CK             \m_clock/hour_set_low__i2  (from \m_clock/clk_500ms +)
+   Destination:    FD1S3IX    CD             \m_clock/hour_set_high__i3  (to \m_clock/clk_500ms +)
+
+   Delay:                   7.342ns  (32.8% logic, 67.2% route), 6 logic levels.
+
+ Constraint Details:
+
+      7.342ns data_path \m_clock/hour_set_low__i2 to \m_clock/hour_set_high__i3 violates
+      5.000ns delay constraint less
+      0.146ns L_S requirement (totaling 4.854ns) by 2.488ns
+
+ Path Details: \m_clock/hour_set_low__i2 to \m_clock/hour_set_high__i3
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \m_clock/hour_set_low__i2 (from \m_clock/clk_500ms)
+Route         3   e 1.099                                  \m_clock/hour_set_low[2]
+LUT4        ---     0.448              C to Z              \m_clock/time_hour_low[1]_bdd_4_lut_23975
+Route         1   e 0.020                                  \m_clock/n26682
+MUXL5       ---     0.212           ALUT to Z              \m_clock/i23976
+Route         2   e 0.954                                  \m_clock/hour_set_high_3__N_1581[2]
+LUT4        ---     0.448              D to Z              \m_clock/i2_4_lut
+Route         1   e 0.788                                  \m_clock/n6_adj_1666
+LUT4        ---     0.448              C to Z              \m_clock/i1_4_lut
+Route         2   e 0.954                                  \m_clock/n25024
+LUT4        ---     0.448              D to Z              \m_clock/i23635_2_lut_2_lut_3_lut_3_lut_4_lut
+Route         4   e 1.120                                  \m_clock/n12383
+                  --------
+                    7.342  (32.8% logic, 67.2% route), 6 logic levels.
+
+
+Error:  The following path violates requirements by 2.488ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3IX    CK             \m_clock/hour_set_low__i2  (from \m_clock/clk_500ms +)
+   Destination:    FD1S3IX    CD             \m_clock/hour_set_high__i2  (to \m_clock/clk_500ms +)
+
+   Delay:                   7.342ns  (32.8% logic, 67.2% route), 6 logic levels.
+
+ Constraint Details:
+
+      7.342ns data_path \m_clock/hour_set_low__i2 to \m_clock/hour_set_high__i2 violates
+      5.000ns delay constraint less
+      0.146ns L_S requirement (totaling 4.854ns) by 2.488ns
+
+ Path Details: \m_clock/hour_set_low__i2 to \m_clock/hour_set_high__i2
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \m_clock/hour_set_low__i2 (from \m_clock/clk_500ms)
+Route         3   e 1.099                                  \m_clock/hour_set_low[2]
+LUT4        ---     0.448              C to Z              \m_clock/time_hour_low[1]_bdd_4_lut_23975
+Route         1   e 0.020                                  \m_clock/n26682
+MUXL5       ---     0.212           ALUT to Z              \m_clock/i23976
+Route         2   e 0.954                                  \m_clock/hour_set_high_3__N_1581[2]
+LUT4        ---     0.448              D to Z              \m_clock/i2_4_lut
+Route         1   e 0.788                                  \m_clock/n6_adj_1666
+LUT4        ---     0.448              C to Z              \m_clock/i1_4_lut
+Route         2   e 0.954                                  \m_clock/n25024
+LUT4        ---     0.448              D to Z              \m_clock/i23635_2_lut_2_lut_3_lut_3_lut_4_lut
+Route         4   e 1.120                                  \m_clock/n12383
+                  --------
+                    7.342  (32.8% logic, 67.2% route), 6 logic levels.
+
+
+Error:  The following path violates requirements by 2.488ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3IX    CK             \m_clock/hour_set_low__i2  (from \m_clock/clk_500ms +)
+   Destination:    FD1S3IX    CD             \m_clock/hour_set_high__i1  (to \m_clock/clk_500ms +)
+
+   Delay:                   7.342ns  (32.8% logic, 67.2% route), 6 logic levels.
+
+ Constraint Details:
+
+      7.342ns data_path \m_clock/hour_set_low__i2 to \m_clock/hour_set_high__i1 violates
+      5.000ns delay constraint less
+      0.146ns L_S requirement (totaling 4.854ns) by 2.488ns
+
+ Path Details: \m_clock/hour_set_low__i2 to \m_clock/hour_set_high__i1
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \m_clock/hour_set_low__i2 (from \m_clock/clk_500ms)
+Route         3   e 1.099                                  \m_clock/hour_set_low[2]
+LUT4        ---     0.448              C to Z              \m_clock/time_hour_low[1]_bdd_4_lut_23975
+Route         1   e 0.020                                  \m_clock/n26682
+MUXL5       ---     0.212           ALUT to Z              \m_clock/i23976
+Route         2   e 0.954                                  \m_clock/hour_set_high_3__N_1581[2]
+LUT4        ---     0.448              D to Z              \m_clock/i2_4_lut
+Route         1   e 0.788                                  \m_clock/n6_adj_1666
+LUT4        ---     0.448              C to Z              \m_clock/i1_4_lut
+Route         2   e 0.954                                  \m_clock/n25024
+LUT4        ---     0.448              D to Z              \m_clock/i23635_2_lut_2_lut_3_lut_3_lut_4_lut
+Route         4   e 1.120                                  \m_clock/n12383
+                  --------
+                    7.342  (32.8% logic, 67.2% route), 6 logic levels.
+
+Warning: 7.488 ns is the maximum delay for this constraint.
+
+
+
+================================================================================
+Constraint: create_clock -period 5.000000 -name clk0 [get_nets sys_clk_c]
+            2905 items scored, 2905 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error:  The following path violates requirements by 12.794ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3AX    CK             \m_OLED12832/num_2268__i0  (from sys_clk_c +)
+   Destination:    FD1S3AX    D              \m_OLED12832/char_reg_i6  (to sys_clk_c +)
+
+   Delay:                  17.648ns  (32.5% logic, 67.5% route), 15 logic levels.
+
+ Constraint Details:
+
+     17.648ns data_path \m_OLED12832/num_2268__i0 to \m_OLED12832/char_reg_i6 violates
+      5.000ns delay constraint less
+      0.146ns L_S requirement (totaling 4.854ns) by 12.794ns
+
+ Path Details: \m_OLED12832/num_2268__i0 to \m_OLED12832/char_reg_i6
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \m_OLED12832/num_2268__i0 (from sys_clk_c)
+Route        49   e 1.771                                  \m_OLED12832/num[0]
+LUT4        ---     0.448              C to Z              \m_OLED12832/shift_right_66_i1178_3_lut
+Route         1   e 0.788                                  \m_OLED12832/n1178
+LUT4        ---     0.448              C to Z              \m_OLED12832/char[49]_bdd_4_lut_4_lut
+Route         1   e 0.788                                  \m_OLED12832/n27537
+MUXL5       ---     0.212             D1 to Z              \m_OLED12832/i23395
+Route         1   e 0.788                                  \m_OLED12832/n25750
+LUT4        ---     0.448              A to Z              \m_OLED12832/i23397_3_lut
+Route         8   e 1.287                                  \m_OLED12832/n2130
+LUT4        ---     0.448              A to Z              \m_OLED12832/i14818_2_lut_rep_435
+Route        35   e 1.707                                  n27550
+LUT4        ---     0.448          AD[7] to DO0            mux_371_Mux_14
+Route         1   e 0.788                                  n1961
+LUT4        ---     0.448              A to Z              \m_OLED12832/i23364_3_lut
+Route         1   e 0.020                                  \m_OLED12832/n25719
+MUXL5       ---     0.212           ALUT to Z              \m_OLED12832/i23987
+Route         1   e 0.788                                  \m_OLED12832/n26704
+LUT4        ---     0.448              B to Z              \m_OLED12832/led_c_bdd_2_lut_23994_2_lut
+Route         1   e 0.020                                  \m_OLED12832/n26705
+MUXL5       ---     0.212           ALUT to Z              \m_OLED12832/i23990
+Route         1   e 0.788                                  \m_OLED12832/n26707
+LUT4        ---     0.448              B to Z              \m_OLED12832/i1_2_lut_adj_494
+Route         1   e 0.788                                  \m_OLED12832/n64_adj_1742
+LUT4        ---     0.448              C to Z              \m_OLED12832/i1_4_lut_4_lut_adj_151
+Route         1   e 0.020                                  \m_OLED12832/n12_adj_1689
+MUXL5       ---     0.212           ALUT to Z              \m_OLED12832/i47_adj_95
+Route         1   e 0.788                                  \m_OLED12832/n24_adj_1690
+LUT4        ---     0.448              A to Z              \m_OLED12832/i1_4_lut_adj_266
+Route         1   e 0.788                                  \m_OLED12832/char_reg_7__N_535[6]
+                  --------
+                   17.648  (32.5% logic, 67.5% route), 15 logic levels.
+
+
+Error:  The following path violates requirements by 12.794ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3AX    CK             \m_OLED12832/num_2268__i0  (from sys_clk_c +)
+   Destination:    FD1S3AX    D              \m_OLED12832/char_reg_i6  (to sys_clk_c +)
+
+   Delay:                  17.648ns  (32.5% logic, 67.5% route), 15 logic levels.
+
+ Constraint Details:
+
+     17.648ns data_path \m_OLED12832/num_2268__i0 to \m_OLED12832/char_reg_i6 violates
+      5.000ns delay constraint less
+      0.146ns L_S requirement (totaling 4.854ns) by 12.794ns
+
+ Path Details: \m_OLED12832/num_2268__i0 to \m_OLED12832/char_reg_i6
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \m_OLED12832/num_2268__i0 (from sys_clk_c)
+Route        49   e 1.771                                  \m_OLED12832/num[0]
+LUT4        ---     0.448              C to Z              \m_OLED12832/shift_right_66_i1178_3_lut
+Route         1   e 0.788                                  \m_OLED12832/n1178
+LUT4        ---     0.448              C to Z              \m_OLED12832/char[49]_bdd_4_lut_4_lut
+Route         1   e 0.788                                  \m_OLED12832/n27537
+MUXL5       ---     0.212             D1 to Z              \m_OLED12832/i23395
+Route         1   e 0.788                                  \m_OLED12832/n25750
+LUT4        ---     0.448              A to Z              \m_OLED12832/i23397_3_lut
+Route         8   e 1.287                                  \m_OLED12832/n2130
+LUT4        ---     0.448              A to Z              \m_OLED12832/i14818_2_lut_rep_435
+Route        35   e 1.707                                  n27550
+LUT4        ---     0.448          AD[7] to DO0            mux_371_Mux_30
+Route         1   e 0.788                                  n1205
+LUT4        ---     0.448              A to Z              \m_OLED12832/n25719_bdd_3_lut_24376
+Route         1   e 0.020                                  \m_OLED12832/n26703
+MUXL5       ---     0.212           BLUT to Z              \m_OLED12832/i23987
+Route         1   e 0.788                                  \m_OLED12832/n26704
+LUT4        ---     0.448              B to Z              \m_OLED12832/led_c_bdd_2_lut_23994_2_lut
+Route         1   e 0.020                                  \m_OLED12832/n26705
+MUXL5       ---     0.212           ALUT to Z              \m_OLED12832/i23990
+Route         1   e 0.788                                  \m_OLED12832/n26707
+LUT4        ---     0.448              B to Z              \m_OLED12832/i1_2_lut_adj_494
+Route         1   e 0.788                                  \m_OLED12832/n64_adj_1742
+LUT4        ---     0.448              C to Z              \m_OLED12832/i1_4_lut_4_lut_adj_151
+Route         1   e 0.020                                  \m_OLED12832/n12_adj_1689
+MUXL5       ---     0.212           ALUT to Z              \m_OLED12832/i47_adj_95
+Route         1   e 0.788                                  \m_OLED12832/n24_adj_1690
+LUT4        ---     0.448              A to Z              \m_OLED12832/i1_4_lut_adj_266
+Route         1   e 0.788                                  \m_OLED12832/char_reg_7__N_535[6]
+                  --------
+                   17.648  (32.5% logic, 67.5% route), 15 logic levels.
+
+
+Error:  The following path violates requirements by 12.794ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3AX    CK             \m_OLED12832/num_2268__i0  (from sys_clk_c +)
+   Destination:    FD1S3AX    D              \m_OLED12832/char_reg_i6  (to sys_clk_c +)
+
+   Delay:                  17.648ns  (32.5% logic, 67.5% route), 15 logic levels.
+
+ Constraint Details:
+
+     17.648ns data_path \m_OLED12832/num_2268__i0 to \m_OLED12832/char_reg_i6 violates
+      5.000ns delay constraint less
+      0.146ns L_S requirement (totaling 4.854ns) by 12.794ns
+
+ Path Details: \m_OLED12832/num_2268__i0 to \m_OLED12832/char_reg_i6
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \m_OLED12832/num_2268__i0 (from sys_clk_c)
+Route        49   e 1.771                                  \m_OLED12832/num[0]
+LUT4        ---     0.448              C to Z              \m_OLED12832/shift_right_66_i1178_3_lut
+Route         1   e 0.788                                  \m_OLED12832/n1178
+LUT4        ---     0.448              C to Z              \m_OLED12832/char[49]_bdd_4_lut_4_lut
+Route         1   e 0.788                                  \m_OLED12832/n27537
+MUXL5       ---     0.212             D1 to Z              \m_OLED12832/i23395
+Route         1   e 0.788                                  \m_OLED12832/n25750
+LUT4        ---     0.448              A to Z              \m_OLED12832/i23397_3_lut
+Route         8   e 1.287                                  \m_OLED12832/n2130
+LUT4        ---     0.448              A to Z              \m_OLED12832/i14818_2_lut_rep_435
+Route        35   e 1.707                                  n27550
+LUT4        ---     0.448          AD[7] to DO0            mux_371_Mux_6
+Route         1   e 0.788                                  n2339
+LUT4        ---     0.448              B to Z              \m_OLED12832/i23364_3_lut
+Route         1   e 0.020                                  \m_OLED12832/n25719
+MUXL5       ---     0.212           ALUT to Z              \m_OLED12832/i23987
+Route         1   e 0.788                                  \m_OLED12832/n26704
+LUT4        ---     0.448              B to Z              \m_OLED12832/led_c_bdd_2_lut_23994_2_lut
+Route         1   e 0.020                                  \m_OLED12832/n26705
+MUXL5       ---     0.212           ALUT to Z              \m_OLED12832/i23990
+Route         1   e 0.788                                  \m_OLED12832/n26707
+LUT4        ---     0.448              B to Z              \m_OLED12832/i1_2_lut_adj_494
+Route         1   e 0.788                                  \m_OLED12832/n64_adj_1742
+LUT4        ---     0.448              C to Z              \m_OLED12832/i1_4_lut_4_lut_adj_151
+Route         1   e 0.020                                  \m_OLED12832/n12_adj_1689
+MUXL5       ---     0.212           ALUT to Z              \m_OLED12832/i47_adj_95
+Route         1   e 0.788                                  \m_OLED12832/n24_adj_1690
+LUT4        ---     0.448              A to Z              \m_OLED12832/i1_4_lut_adj_266
+Route         1   e 0.788                                  \m_OLED12832/char_reg_7__N_535[6]
+                  --------
+                   17.648  (32.5% logic, 67.5% route), 15 logic levels.
+
+Warning: 17.794 ns is the maximum delay for this constraint.
+
+
+Timing Report Summary
+--------------
+--------------------------------------------------------------------------------
+Constraint                              |   Constraint|       Actual|Levels
+--------------------------------------------------------------------------------
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk5 [get_nets \m_uart_tx/clk_en]       |     5.000 ns|     2.953 ns|     2  
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk4 [get_nets \m_uart_tx/clk_uart]     |     5.000 ns|     7.930 ns|     8 *
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk3 [get_nets \m_DS18B20Z/clk_1mhz]    |            -|            -|     0  
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk2 [get_nets \m_clock/clk_1ms]        |     5.000 ns|     8.674 ns|     6 *
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk1 [get_nets \m_clock/clk_500ms]      |     5.000 ns|     7.488 ns|     6 *
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk0 [get_nets sys_clk_c]               |     5.000 ns|    17.794 ns|    15 *
+                                        |             |             |
+--------------------------------------------------------------------------------
+
+
+4 constraints not met.
+
+--------------------------------------------------------------------------------
+Critical Nets                           |   Loads|  Errors| % of total
+--------------------------------------------------------------------------------
+\m_OLED12832/num[0]                     |      49|    1210|     33.74%
+                                        |        |        |
+\m_OLED12832/n2131                      |       7|     628|     17.51%
+                                        |        |        |
+\m_OLED12832/n2130                      |       8|     588|     16.40%
+                                        |        |        |
+n27549                                  |      35|     567|     15.81%
+                                        |        |        |
+\m_OLED12832/n2132                      |       8|     550|     15.34%
+                                        |        |        |
+n27542                                  |      35|     534|     14.89%
+                                        |        |        |
+n27550                                  |      35|     525|     14.64%
+                                        |        |        |
+\m_OLED12832/char_reg_7__N_535[2]       |       1|     479|     13.36%
+                                        |        |        |
+\m_OLED12832/n12                        |       1|     479|     13.36%
+                                        |        |        |
+\m_OLED12832/n24                        |       1|     479|     13.36%
+                                        |        |        |
+\m_OLED12832/n64                        |       1|     479|     13.36%
+                                        |        |        |
+\m_OLED12832/n28518                     |       1|     479|     13.36%
+                                        |        |        |
+\m_OLED12832/num[1]                     |      27|     466|     12.99%
+                                        |        |        |
+\m_OLED12832/n25750                     |       1|     448|     12.49%
+                                        |        |        |
+\m_OLED12832/n2129                      |       3|     429|     11.96%
+                                        |        |        |
+n664                                    |      38|     420|     11.71%
+                                        |        |        |
+\m_OLED12832/char_reg_7__N_535[0]       |       1|     416|     11.60%
+                                        |        |        |
+\m_OLED12832/char_reg_7__N_535[1]       |       1|     416|     11.60%
+                                        |        |        |
+\m_OLED12832/char_reg_7__N_535[4]       |       1|     416|     11.60%
+                                        |        |        |
+\m_OLED12832/n12_adj_1739               |       1|     416|     11.60%
+                                        |        |        |
+\m_OLED12832/n12_adj_1743               |       1|     416|     11.60%
+                                        |        |        |
+\m_OLED12832/n12_adj_1744               |       1|     416|     11.60%
+                                        |        |        |
+\m_OLED12832/n24_adj_1813               |       1|     416|     11.60%
+                                        |        |        |
+\m_OLED12832/n24_adj_1819               |       1|     416|     11.60%
+                                        |        |        |
+\m_OLED12832/n24_adj_1894               |       1|     416|     11.60%
+                                        |        |        |
+\m_OLED12832/n26504                     |       1|     416|     11.60%
+                                        |        |        |
+\m_OLED12832/n26505                     |       1|     416|     11.60%
+                                        |        |        |
+\m_OLED12832/n26585                     |       1|     416|     11.60%
+                                        |        |        |
+\m_OLED12832/n26586                     |       1|     416|     11.60%
+                                        |        |        |
+\m_OLED12832/n26592                     |       1|     416|     11.60%
+                                        |        |        |
+\m_OLED12832/n26593                     |       1|     416|     11.60%
+                                        |        |        |
+\m_OLED12832/char_reg_7__N_535[3]       |       1|     410|     11.43%
+                                        |        |        |
+\m_OLED12832/char_reg_7__N_535[6]       |       1|     410|     11.43%
+                                        |        |        |
+\m_OLED12832/n12_adj_1683               |       1|     410|     11.43%
+                                        |        |        |
+\m_OLED12832/n12_adj_1689               |       1|     410|     11.43%
+                                        |        |        |
+\m_OLED12832/n24_adj_1684               |       1|     410|     11.43%
+                                        |        |        |
+\m_OLED12832/n24_adj_1690               |       1|     410|     11.43%
+                                        |        |        |
+\m_OLED12832/n64_adj_1741               |       1|     410|     11.43%
+                                        |        |        |
+\m_OLED12832/n64_adj_1742               |       1|     410|     11.43%
+                                        |        |        |
+\m_OLED12832/n26707                     |       1|     410|     11.43%
+                                        |        |        |
+\m_OLED12832/n26719                     |       1|     410|     11.43%
+                                        |        |        |
+\m_OLED12832/n2134                      |       4|     408|     11.38%
+                                        |        |        |
+\m_OLED12832/n25715                     |       1|     408|     11.38%
+                                        |        |        |
+n659                                    |      36|     405|     11.29%
+                                        |        |        |
+\m_OLED12832/n26704                     |       1|     400|     11.15%
+                                        |        |        |
+\m_OLED12832/n26705                     |       1|     400|     11.15%
+                                        |        |        |
+\m_OLED12832/n26716                     |       1|     400|     11.15%
+                                        |        |        |
+\m_OLED12832/n26717                     |       1|     400|     11.15%
+                                        |        |        |
+\m_OLED12832/n28514                     |       1|     400|     11.15%
+                                        |        |        |
+\m_OLED12832/n28515                     |       1|     400|     11.15%
+                                        |        |        |
+--------------------------------------------------------------------------------
+
+
+Timing summary:
+---------------
+
+Timing errors: 3586  Score: 32298182
+
+Constraints cover  28231 paths, 2262 nets, and 6931 connections (90.9% coverage)
+
+
+Peak memory: 113168384 bytes, TRCE: 7376896 bytes, DLYMAN: 655360 bytes
+CPU_TIME_REPORT: 0 secs 

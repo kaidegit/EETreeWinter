@@ -1,0 +1,20 @@
+Results of NGD DRC are available in OLED12832_drc.log.
+Loading NGL library 'C:/lscc/diamond/3.10_x64/ispfpga/xo2c00a/data/xo2alib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.10_x64/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.10_x64/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.10_x64/ispfpga/or5g00/data/orc5glib.ngl'...
+
+
+Running DRC...
+
+WARNING - synthesis: logical net 'oled_data' has no load.
+WARNING - synthesis: input pad net 'oled_data' has no legal load.
+WARNING - synthesis: logical net 'oled_show_en' has no load.
+WARNING - synthesis: input pad net 'oled_show_en' has no legal load.
+WARNING - synthesis: DRC complete with 4 warnings.
+
+Design Results:
+    699 blocks expanded
+completed the first expansion
+All blocks are expanded and NGD expansion is successful.
+Writing NGD file ds18b20_impl1.ngd.
